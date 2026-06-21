@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earth Retreat Foundation | Climate Action &amp; Biodiversity in Chhattisgarh</title>
+<meta name="description" content="Earth Retreat Foundation is a grassroots environmental NGO in Chhattisgarh working on climate change, plastic reduction, tree plantation, biodiversity, and capacity building of rural people.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Earth Retreat Foundation — earthretreatfoundation.com
+   Palette: Canopy #14352A | Leaf #3E7C59 | Marigold #D89A2B
+            Mist #F3F5F0 | Ink #1C2420 | Bark #6B4F35
+   Type: Marcellus (display) / Karla (body) / IBM Plex Mono (labels)
+   ============================================================ */
+
+:root{
+  --canopy:#14352A;
+  --canopy-deep:#0D261E;
+  --leaf:#3E7C59;
+  --leaf-soft:#DCE9DF;
+  --marigold:#D89A2B;
+  --mist:#F3F5F0;
+  --ink:#1C2420;
+  --bark:#6B4F35;
+  --white:#FFFFFF;
+  --maxw:1180px;
+  --radius:10px;
+  --shadow:0 14px 40px rgba(20,53,42,.12);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Karla',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--mist);
+  line-height:1.65;
+  font-size:17px;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+h1,h2,h3,.display{font-family:'Marcellus',serif;font-weight:400;line-height:1.15;color:var(--canopy)}
+h1{font-size:clamp(2.2rem,5vw,3.6rem)}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}
+h3{font-size:1.25rem}
+
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--leaf);display:inline-flex;align-items:center;gap:.6rem;
+  margin-bottom:.9rem;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--marigold)}
+
+.btn{
+  display:inline-block;padding:.85rem 1.9rem;border-radius:999px;
+  font-family:'IBM Plex Mono',monospace;font-size:.85rem;letter-spacing:.06em;
+  transition:transform .2s ease,background .2s ease,color .2s ease;
+  border:1px solid transparent;cursor:pointer;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-solid{background:var(--marigold);color:var(--canopy-deep)}
+.btn-solid:hover{background:#E5AB42}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:var(--white)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-outline{border-color:var(--canopy);color:var(--canopy)}
+.btn-outline:hover{background:var(--canopy);color:var(--white)}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(243,245,240,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(20,53,42,.08);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand-mark{width:38px;height:38px}
+.brand-name{font-family:'Marcellus',serif;font-size:1.12rem;color:var(--canopy);line-height:1.1}
+.brand-name span{display:block;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.22em;color:var(--bark)}
+.nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center}
+.nav-links a{font-size:.95rem;color:var(--ink);padding:.3rem 0;border-bottom:2px solid transparent;transition:border-color .2s}
+.nav-links a:hover,.nav-links a.active{border-color:var(--marigold);color:var(--canopy)}
+.nav-cta{margin-left:.5rem}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+.menu-btn svg{width:26px;height:26px;stroke:var(--canopy)}
+
+/* ---------- Hero (home) ---------- */
+.hero{
+  position:relative;color:var(--white);
+  background:linear-gradient(160deg,var(--canopy-deep) 0%,var(--canopy) 55%,#1C4A38 100%);
+  overflow:hidden;
+}
+.hero .contours{position:absolute;inset:0;opacity:.16;pointer-events:none}
+.hero-inner{position:relative;padding:7rem 0 6rem;max-width:720px}
+.hero h1{color:var(--white);margin:.4rem 0 1.2rem}
+.hero p{font-size:1.12rem;color:rgba(255,255,255,.82);max-width:560px;margin-bottom:2rem}
+.hero .eyebrow{color:var(--marigold)}
+.hero .eyebrow::before{background:var(--marigold)}
+.hero-rotate{min-height:1.2em;display:block}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+
+/* page hero (inner pages) */
+.page-hero{
+  position:relative;color:var(--white);
+  background:linear-gradient(150deg,var(--canopy-deep),var(--canopy));
+  overflow:hidden;
+}
+.page-hero .contours{position:absolute;inset:0;opacity:.14}
+.page-hero-inner{position:relative;padding:4.5rem 0 3.5rem}
+.page-hero h1{color:var(--white)}
+.page-hero p{color:rgba(255,255,255,.8);max-width:600px;margin-top:.8rem}
+.page-hero .eyebrow{color:var(--marigold)}
+
+/* ---------- Stats band ---------- */
+.stats{background:var(--white);border-bottom:1px solid rgba(20,53,42,.08)}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:3rem 0}
+.stat{text-align:left;border-left:3px solid var(--marigold);padding-left:1.2rem}
+.stat .num{font-family:'Marcellus',serif;font-size:2.6rem;color:var(--canopy);line-height:1}
+.stat .label{font-size:.92rem;color:var(--bark);margin-top:.4rem}
+
+/* ---------- Sections ---------- */
+section.block{padding:5rem 0}
+.block-alt{background:var(--white)}
+.two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center}
+.lede{font-size:1.08rem;color:#3A453F}
+.checklist{list-style:none;margin-top:1.4rem;display:grid;gap:.7rem}
+.checklist li{display:flex;gap:.7rem;align-items:flex-start}
+.checklist li::before{content:"";flex:0 0 18px;height:18px;margin-top:.25rem;border-radius:50%;
+  background:var(--leaf-soft);box-shadow:inset 0 0 0 5px var(--leaf)}
+
+/* image placeholder */
+.ph{
+  border-radius:var(--radius);overflow:hidden;position:relative;
+  background:linear-gradient(135deg,var(--leaf) 0%,var(--canopy) 100%);
+  min-height:340px;display:flex;align-items:flex-end;box-shadow:var(--shadow);
+}
+.ph .contours{position:absolute;inset:0;opacity:.22}
+.ph span{
+  position:relative;margin:1rem;padding:.35rem .8rem;border-radius:6px;
+  background:rgba(13,38,30,.65);color:rgba(255,255,255,.85);
+  font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.08em;
+}
+
+/* ---------- Cards ---------- */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:2.6rem}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;margin-top:2.6rem}
+.card{
+  background:var(--white);border-radius:var(--radius);padding:2rem 1.7rem;
+  border:1px solid rgba(20,53,42,.08);box-shadow:0 4px 18px rgba(20,53,42,.05);
+  transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column;
+}
+.block-alt .card{background:var(--mist)}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.card .icon{
+  width:52px;height:52px;border-radius:12px;display:grid;place-items:center;
+  background:var(--leaf-soft);margin-bottom:1.1rem;
+}
+.card .icon svg{width:26px;height:26px;stroke:var(--canopy)}
+.card h3{margin-bottom:.6rem}
+.card p{font-size:.96rem;color:#3A453F;flex:1}
+.card .more{
+  margin-top:1.2rem;font-family:'IBM Plex Mono',monospace;font-size:.78rem;
+  letter-spacing:.1em;color:var(--leaf);
+}
+.card .more:hover{color:var(--marigold)}
+.card .tag{
+  align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:.68rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--bark);
+  background:rgba(216,154,43,.14);padding:.3rem .7rem;border-radius:999px;margin-bottom:1rem;
+}
+
+/* ---------- Team ---------- */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:2.6rem}
+.member{background:var(--white);border-radius:var(--radius);overflow:hidden;
+  border:1px solid rgba(20,53,42,.08);box-shadow:0 4px 18px rgba(20,53,42,.05)}
+.member .photo{height:230px;background:linear-gradient(135deg,var(--leaf-soft),#CBDCCF);
+  display:grid;place-items:center;color:var(--canopy)}
+.member .photo svg{width:64px;height:64px;opacity:.5}
+.member .info{padding:1.4rem 1.5rem 1.7rem}
+.member .role{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--marigold);margin:.25rem 0 .7rem}
+.member p{font-size:.93rem;color:#3A453F}
+
+/* ---------- CTA band ---------- */
+.cta{
+  position:relative;background:linear-gradient(140deg,var(--canopy-deep),var(--canopy));
+  color:var(--white);overflow:hidden;
+}
+.cta .contours{position:absolute;inset:0;opacity:.15}
+.cta-inner{position:relative;padding:4.5rem 0;display:flex;align-items:center;
+  justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.cta h2{color:var(--white)}
+.cta p{color:rgba(255,255,255,.8);margin-top:.5rem;max-width:520px}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:start}
+.contact-card{background:var(--white);border-radius:var(--radius);padding:2.2rem;
+  border:1px solid rgba(20,53,42,.08);box-shadow:var(--shadow)}
+.field{margin-bottom:1.2rem}
+.field label{display:block;font-family:'IBM Plex Mono',monospace;font-size:.74rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--bark);margin-bottom:.4rem}
+.field input,.field textarea,.field select{
+  width:100%;padding:.8rem 1rem;border:1px solid rgba(20,53,42,.18);border-radius:8px;
+  font-family:'Karla',sans-serif;font-size:.98rem;background:var(--mist);color:var(--ink)
+}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:2px solid var(--leaf);outline-offset:1px;border-color:var(--leaf)}
+.info-line{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.4rem}
+.info-line svg{width:22px;height:22px;stroke:var(--leaf);flex:0 0 auto;margin-top:.2rem}
+.info-line strong{display:block;color:var(--canopy)}
+
+/* ---------- Footer ---------- */
+footer{background:var(--canopy-deep);color:rgba(255,255,255,.78)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;padding:4rem 0 3rem}
+.foot h4{font-family:'Marcellus',serif;color:var(--white);margin-bottom:1rem;font-size:1.05rem}
+.foot ul{list-style:none;display:grid;gap:.55rem;font-size:.94rem}
+.foot a:hover{color:var(--marigold)}
+.foot .brand-name{color:var(--white)}
+.foot p{font-size:.93rem;margin-top:.9rem;max-width:300px}
+.foot-bar{border-top:1px solid rgba(255,255,255,.12);padding:1.3rem 0;
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+/* ---------- Reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .two-col,.contact-grid{grid-template-columns:1fr}
+  .grid-3,.team-grid{grid-template-columns:repeat(2,1fr)}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .grid-3,.grid-2,.team-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr;gap:1.4rem}
+  .nav-links{
+    position:fixed;inset:74px 0 auto 0;background:var(--mist);flex-direction:column;
+    padding:1.5rem 24px 2rem;gap:1.1rem;border-bottom:1px solid rgba(20,53,42,.1);
+    transform:translateY(-130%);transition:transform .3s ease;align-items:flex-start;
+  }
+  .nav-links.open{transform:none}
+  .menu-btn{display:block}
+  .hero-inner{padding:5rem 0 4.5rem}
+  .foot{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   Additions for real ERF content
+   ============================================================ */
+
+/* Objectives icons reuse .card — add accent number */
+.obj-num{
+  font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.1em;
+  color:var(--marigold);margin-bottom:.6rem;display:block;
+}
+
+/* Events timeline */
+.events{display:grid;gap:1.4rem;margin-top:2.6rem}
+.event{
+  background:var(--white);border-radius:var(--radius);border:1px solid rgba(20,53,42,.08);
+  box-shadow:0 4px 18px rgba(20,53,42,.05);padding:1.8rem 1.9rem;
+  display:grid;grid-template-columns:150px 1fr;gap:1.6rem;align-items:start;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.block-alt .event{background:var(--mist)}
+.event:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.event .date{
+  border-right:2px solid var(--leaf-soft);padding-right:1.2rem;
+}
+.event .date .d{font-family:'Marcellus',serif;font-size:1.9rem;color:var(--canopy);line-height:1}
+.event .date .m{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--bark);margin-top:.3rem}
+.event h3{margin-bottom:.5rem}
+.event .meta{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--leaf);margin-bottom:.7rem}
+.event p{font-size:.97rem;color:#3A453F}
+.event .partners{font-size:.86rem;color:var(--bark);margin-top:.7rem}
+@media (max-width:640px){
+  .event{grid-template-columns:1fr;gap:.8rem}
+  .event .date{border-right:none;border-bottom:2px solid var(--leaf-soft);padding:0 0 .8rem;
+    display:flex;align-items:baseline;gap:.6rem}
+}
+
+/* Reach grid (villages/districts) */
+.reach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.4rem}
+.reach{
+  background:var(--white);border-left:3px solid var(--marigold);border-radius:8px;
+  padding:1.1rem 1.3rem;box-shadow:0 4px 14px rgba(20,53,42,.05);
+}
+.block-alt .reach{background:var(--mist)}
+.reach .v{font-family:'Marcellus',serif;font-size:1.12rem;color:var(--canopy)}
+.reach .dist{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--bark);margin-top:.25rem}
+@media (max-width:900px){.reach-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.reach-grid{grid-template-columns:1fr}}
+
+/* Quote band */
+.quote{background:var(--white);border-top:1px solid rgba(20,53,42,.08);border-bottom:1px solid rgba(20,53,42,.08)}
+.quote-inner{padding:4rem 0;text-align:center;max-width:760px;margin:0 auto}
+.quote blockquote{font-family:'Marcellus',serif;font-size:clamp(1.4rem,3vw,2rem);
+  color:var(--canopy);line-height:1.4}
+.quote .by{font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--marigold);margin-top:1.4rem}
+
+/* Partner logos / strip */
+.partners-strip{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem}
+.partner-chip{
+  font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.04em;
+  background:var(--leaf-soft);color:var(--canopy);padding:.55rem 1rem;border-radius:999px;
+}
+
+/* ============================================================
+   Animated theme illustrations (Climate, Plastic, Trees,
+   Biodiversity, Capacity building)
+   ============================================================ */
+.illo-wrap{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+  background:linear-gradient(135deg,#EAF1EC,#F3F5F0);position:relative}
+.illo{display:block;width:100%;height:auto}
+.illo-card{height:186px}
+.illo-card .illo{height:186px;width:100%}
+
+/* Keyframes */
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+@keyframes corePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes mercRise{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1)}}
+@keyframes drift{0%{transform:translateX(-60px)}100%{transform:translateX(460px)}}
+@keyframes sway{0%{transform:rotate(-2.2deg)}100%{transform:rotate(2.2deg)}}
+@keyframes shimmer{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes drop{0%{transform:translateY(-6px);opacity:0}15%{opacity:1}100%{transform:translateY(46px);opacity:0}}
+@keyframes flyAcross{0%{transform:translate(-50px,8px)}100%{transform:translate(440px,-12px)}}
+@keyframes flap{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.35)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes wing{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.5)}}
+@keyframes bloom{0%,100%{transform:scale(.82)}50%{transform:scale(1.05)}}
+@keyframes glow{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes ripple{0%{transform:scale(.2);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+@keyframes barUp{0%{transform:scaleY(.15)}100%{transform:scaleY(1)}}
+@keyframes spinRev{to{transform:rotate(-360deg)}}
+@keyframes fadeSwap{0%,45%{opacity:1}55%,100%{opacity:0}}
+@keyframes fadeSwap2{0%,45%{opacity:0}55%,100%{opacity:1}}
+
+.anim [data-spin]{animation:spinSlow 26s linear infinite;transform-box:fill-box;transform-origin:center}
+.anim [data-core]{animation:corePulse 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.anim [data-merc]{animation:mercRise 4s ease-in-out infinite;transform-box:fill-box;transform-origin:bottom}
+.anim [data-cloud]{animation:drift 22s linear infinite}
+.anim [data-sway]{animation:sway 4s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:bottom}
+.anim [data-shimmer]{animation:shimmer 3.2s ease-in-out infinite}
+.anim [data-drop]{animation:drop 2.4s ease-in infinite;transform-box:fill-box}
+.anim [data-bird]{animation:flyAcross 9s linear infinite}
+.anim [data-flap]{animation:flap 0.5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.anim [data-bob]{animation:bob 3.5s ease-in-out infinite;transform-box:fill-box}
+.anim [data-wing]{animation:wing 0.45s ease-in-out infinite;transform-box:fill-box;transform-origin:right}
+.anim [data-bloom]{animation:bloom 3.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.anim [data-glow]{animation:glow 2.4s ease-in-out infinite}
+.anim [data-ripple]{animation:ripple 3s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.anim [data-bar]{animation:barUp 2.6s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:bottom}
+.anim [data-spinrev]{animation:spinRev 24s linear infinite;transform-box:fill-box;transform-origin:center}
+.anim [data-swap1]{animation:fadeSwap 6s ease-in-out infinite}
+.anim [data-swap2]{animation:fadeSwap2 6s ease-in-out infinite}
+
+@media (prefers-reduced-motion: reduce){
+  .anim *{animation:none!important}
+}
+
+.page{display:none}.page.active{display:block}html.no-js .page{display:block}
+.lang-toggle{display:inline-flex;border:1px solid rgba(20,53,42,.2);border-radius:999px;overflow:hidden;margin-top:1.4rem;font-family:'IBM Plex Mono',monospace;font-size:.78rem}
+.lang-toggle button{background:var(--white);border:none;padding:.5rem 1.1rem;cursor:pointer;letter-spacing:.06em;color:var(--bark);transition:background .2s,color .2s}
+.block-alt .lang-toggle button{background:var(--mist)}
+.lang-toggle button.on{background:var(--canopy);color:var(--white)}
+.hi{display:none}.events.show-hi .en{display:none}.events.show-hi .hi{display:block}
+.hi,[lang="hi"]{font-family:'Noto Sans Devanagari','Karla',sans-serif;line-height:1.8}
+
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="contour-lines" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M-50 480 C 200 380, 380 560, 640 460 S 1100 520, 1260 420"/>
+        <path d="M-50 420 C 220 320, 400 500, 660 400 S 1080 460, 1260 360"/>
+        <path d="M-50 360 C 240 260, 420 440, 680 340 S 1060 400, 1260 300"/>
+        <path d="M-50 300 C 260 200, 440 380, 700 280 S 1040 340, 1260 240"/>
+        <path d="M-50 240 C 280 140, 460 320, 720 220 S 1020 280, 1260 180"/>
+        <path d="M-50 180 C 300 80, 480 260, 740 160 S 1000 220, 1260 120"/>
+      </g>
+    </symbol>
+    <symbol id="logo-mark" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="22" fill="none" stroke="#14352A" stroke-width="2.5"/>
+      <path d="M24 38 C 24 26, 16 22, 13 12 C 24 16, 28 22, 28 30 M24 38 C 24 30, 30 24, 36 20 C 33 28, 30 32, 24 38" fill="none" stroke="#3E7C59" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="24" cy="10" r="3" fill="#D89A2B"/>
+    </symbol>
+    <symbol id="person" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg><header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" data-link>
+      <svg class="brand-mark"><use href="#logo-mark"/></svg>
+      <div class="brand-name">Earth Retreat Foundation<span>CLIMATE &middot; BIODIVERSITY &middot; COMMUNITY</span></div>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home" data-link data-nav="home">Home</a></li>
+        <li><a href="#about" data-link data-nav="about">About</a></li>
+        <li><a href="#services" data-link data-nav="services">What We Do</a></li>
+        <li><a href="#projects" data-link data-nav="projects">Programs</a></li>
+        <li><a href="#team" data-link data-nav="team">Team</a></li>
+        <li><a href="#contact" data-link class="btn btn-solid nav-cta">Get Involved</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+<main id="page-home" class="page">
+<section class="hero">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Environmental NGO &middot; Chhattisgarh</span>
+    <h1>Climate action that starts in the village.
+      <em class="hero-rotate" style="font-style:normal;color:#D89A2B"
+        data-rotate='["Forests first.","Biodiversity always.","Communities at the centre."]'>Forests first.</em>
+    </h1>
+    <p>Earth Retreat Foundation works at the grassroots across Chhattisgarh &mdash; raising climate awareness, strengthening Biodiversity Management Committees, and helping communities protect the forests and species they live alongside.</p>
+    <div class="hero-actions">
+      <a href="#services" data-link class="btn btn-solid">What we do</a>
+      <a href="#projects" data-link class="btn btn-ghost">Our programs</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat reveal">
+      <div class="num"><span data-count="6" data-suffix="+">0</span></div>
+      <div class="label">Districts engaged across Chhattisgarh &mdash; Durg, Kanker, Dhamtari, Balod, Gariyaband &amp; Mohla</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num"><span data-count="7">0</span></div>
+      <div class="label">Climate conclaves and BMC capacity-building workshops delivered in 2026</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num"><span data-count="100" data-suffix="s">0</span></div>
+      <div class="label">Forest staff, BMC members, women's groups and villagers trained on biodiversity</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <span class="eyebrow">About the Foundation</span>
+      <h2>Informed communities build a climate-resilient future</h2>
+      <p class="lede" style="margin-top:1rem">Since its inception, Earth Retreat Foundation has worked consistently towards climate change mitigation and environmental protection &mdash; running awareness programs, community capacity development, and biodiversity conservation initiatives at the grassroots level.</p>
+      <p style="margin-top:1rem">We partner with the Chhattisgarh Forest &amp; Climate Change Department and the State Biodiversity Board as a technical partner, bringing expertise on Biodiversity Management Committees (BMCs), People's Biodiversity Registers (PBR), Access &amp; Benefit Sharing (ABS), and eco-tourism livelihoods directly to villages.</p>
+      <a href="#about" data-link class="btn btn-outline" style="margin-top:1.8rem">Read our story</a>
+    </div>
+    <div class="illo-wrap reveal"><svg class="anim illo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Biodiversity" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bd-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E5EFE8"/><stop offset="1" stop-color="#F3F5F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bd-bg)"/>
+  <!-- flying bird (flapping) -->
+  <g data-bird>
+    <g data-flap stroke="#14352A" stroke-width="5" fill="none" stroke-linecap="round">
+      <path d="M-16 0 Q0 -16 16 0"/>
+      <path d="M16 0 Q32 -16 48 0"/>
+    </g>
+  </g>
+  <!-- second bird -->
+  <g data-bird style="animation-delay:4s">
+    <g data-flap stroke="#3E7C59" stroke-width="4" fill="none" stroke-linecap="round" style="animation-delay:.2s" transform="scale(.7)">
+      <path d="M-16 0 Q0 -16 16 0"/><path d="M16 0 Q32 -16 48 0"/>
+    </g>
+  </g>
+  <!-- foliage -->
+  <path d="M0 270 C 70 250, 120 282, 200 262 S 340 250, 400 270 L400 300 L0 300Z" fill="#3E7C59" opacity="0.9"/>
+  <path d="M0 282 C 90 268, 150 292, 250 276 S 360 270, 400 284 L400 300 L0 300Z" fill="#14352A" opacity="0.5"/>
+  <!-- blooming flower -->
+  <g transform="translate(96,232)">
+    <line x1="0" y1="0" x2="0" y2="-44" stroke="#3E7C59" stroke-width="4"/>
+    <g data-bloom transform="translate(0,-50)">
+      <g fill="#E486A8">
+        <ellipse cx="0" cy="-14" rx="8" ry="14"/><ellipse cx="13" cy="-4" rx="8" ry="14" transform="rotate(72 13 -4)"/>
+        <ellipse cx="8" cy="12" rx="8" ry="14" transform="rotate(144 8 12)"/><ellipse cx="-8" cy="12" rx="8" ry="14" transform="rotate(216 -8 12)"/>
+        <ellipse cx="-13" cy="-4" rx="8" ry="14" transform="rotate(288 -13 -4)"/>
+      </g>
+      <circle r="9" fill="#D89A2B"/>
+    </g>
+  </g>
+  <!-- butterfly -->
+  <g transform="translate(290,150)" data-bob>
+    <g data-wing>
+      <path d="M0 0 C -26 -22, -34 6, -6 10 C -22 22, -4 26, 0 6 Z" fill="#D89A2B" opacity="0.9"/>
+    </g>
+    <g data-wing style="animation-delay:.02s" transform="scale(-1,1)">
+      <path d="M0 0 C -26 -22, -34 6, -6 10 C -22 22, -4 26, 0 6 Z" fill="#E0A84A" opacity="0.9"/>
+    </g>
+    <rect x="-2" y="-8" width="4" height="22" rx="2" fill="#14352A"/>
+  </g>
+  <!-- leaf -->
+  <g transform="translate(196,212)" data-shimmer>
+    <path d="M0 0 C 16 -10, 34 -6, 44 -22 C 30 -16, 10 -14, 0 0 Z" fill="#4C8C66"/>
+  </g>
+</svg></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="reveal" style="max-width:700px">
+      <span class="eyebrow">What we focus on</span>
+      <h2>Five themes, one mission</h2>
+      <p class="lede" style="margin-top:.8rem">Our work in Chhattisgarh comes together around five connected commitments &mdash; see how each one plays out on the ground.</p>
+    </div>
+    <div class="grid-3" style="margin-top:2.6rem">
+      <article class="card reveal" style="padding:0;overflow:hidden">
+        <div class="illo-card"><svg class="anim illo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Climate change" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cc-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E7EFE9"/><stop offset="1" stop-color="#F3F5F0"/>
+    </linearGradient>
+    <radialGradient id="cc-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#F2BE5A"/><stop offset="0" stop-color="#F2BE5A"/>
+      <stop offset="1" stop-color="#D89A2B"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#cc-sky)"/>
+  <!-- sun with rotating rays -->
+  <g transform="translate(132,128)">
+    <g data-spin>
+      <g stroke="#D89A2B" stroke-width="5" stroke-linecap="round">
+        <line x1="0" y1="-58" x2="0" y2="-74"/>
+        <line x1="41" y1="-41" x2="52" y2="-52"/>
+        <line x1="58" y1="0" x2="74" y2="0"/>
+        <line x1="41" y1="41" x2="52" y2="52"/>
+        <line x1="0" y1="58" x2="0" y2="74"/>
+        <line x1="-41" y1="41" x2="-52" y2="52"/>
+        <line x1="-58" y1="0" x2="-74" y2="0"/>
+        <line x1="-41" y1="-41" x2="-52" y2="-52"/>
+      </g>
+    </g>
+    <circle data-core r="40" fill="url(#cc-sun)"/>
+  </g>
+  <!-- drifting cloud -->
+  <g data-cloud opacity="0.92">
+    <g fill="#FFFFFF" stroke="#CBDCCF" stroke-width="2">
+      <circle cx="60" cy="70" r="20"/><circle cx="86" cy="62" r="26"/>
+      <circle cx="114" cy="72" r="18"/><rect x="58" y="70" width="60" height="22" rx="11"/>
+    </g>
+  </g>
+  <!-- thermometer -->
+  <g transform="translate(312,84)">
+    <rect x="-11" y="-6" width="22" height="118" rx="11" fill="#FFFFFF" stroke="#14352A" stroke-width="4"/>
+    <circle cx="0" cy="128" r="22" fill="#14352A"/>
+    <rect data-merc x="-5" y="20" width="10" height="108" rx="5" fill="#D8552B"/>
+    <circle cx="0" cy="128" r="13" fill="#D8552B"/>
+  </g>
+  <!-- horizon -->
+  <path d="M0 250 C 90 235, 150 262, 240 246 S 360 235, 400 250 L400 300 L0 300 Z" fill="#DCE9DF"/>
+  <path d="M0 268 C 110 256, 180 278, 270 264 S 380 258, 400 268 L400 300 L0 300 Z" fill="#3E7C59" opacity="0.35"/>
+</svg></div>
+        <div style="padding:1.5rem 1.5rem 1.8rem">
+          <h3>Climate Change</h3>
+        </div>
+      </article>
+      <article class="card reveal" style="padding:0;overflow:hidden">
+        <div class="illo-card"><svg class="anim illo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Plastic reduction" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pr-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EAF1EC"/><stop offset="1" stop-color="#F3F5F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#pr-bg)"/>
+  <!-- rotating recycling loop -->
+  <g transform="translate(200,150)">
+    <g data-spin>
+      <g fill="none" stroke="#3E7C59" stroke-width="14" stroke-linecap="round">
+        <path d="M0 -70 A70 70 0 0 1 60.6 35"/>
+        <path d="M60.6 35 A70 70 0 0 1 -60.6 35"/>
+        <path d="M-60.6 35 A70 70 0 0 1 0 -70"/>
+      </g>
+      <g fill="#3E7C59">
+        <path d="M0 -86 L16 -64 L-16 -64 Z"/>
+        <path d="M74 49 L56 24 L84 30 Z"/>
+        <path d="M-74 49 L-84 30 L-56 24 Z"/>
+      </g>
+    </g>
+    <!-- center: bottle fading to leaf -->
+    <g data-swap1>
+      <g transform="translate(-13,-22)" fill="#BFD3C4" stroke="#14352A" stroke-width="2.5">
+        <rect x="6" y="6" width="14" height="6" rx="2"/>
+        <path d="M5 12 h16 a4 4 0 0 1 4 4 v22 a6 6 0 0 1 -6 6 h-16 a6 6 0 0 1 -6 -6 v-22 a4 4 0 0 1 4 -4 z"/>
+      </g>
+    </g>
+    <g data-swap2>
+      <g transform="translate(0,0)">
+        <path d="M0 18 C 0 2, -14 -6, -20 -20 C -4 -16, 4 -6, 2 12 Z M0 18 C 0 4, 14 -4, 22 -16 C 8 -10, 2 -2, 0 18 Z" fill="#3E7C59"/>
+        <line x1="0" y1="20" x2="0" y2="2" stroke="#14352A" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+  <!-- sparkles -->
+  <g fill="#D89A2B">
+    <circle data-glow cx="92" cy="84" r="4"/>
+    <circle data-glow cx="312" cy="96" r="3.5" style="animation-delay:.8s"/>
+    <circle data-glow cx="300" cy="214" r="4" style="animation-delay:1.4s"/>
+    <circle data-glow cx="100" cy="214" r="3.5" style="animation-delay:.4s"/>
+  </g>
+</svg></div>
+        <div style="padding:1.5rem 1.5rem 1.8rem">
+          <h3>Plastic Reduction</h3>
+        </div>
+      </article>
+      <article class="card reveal" style="padding:0;overflow:hidden">
+        <div class="illo-card"><svg class="anim illo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Tree plantation" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tp-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E7EFE9"/><stop offset="1" stop-color="#F3F5F0"/>
+    </linearGradient>
+    <radialGradient id="tp-can" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#5FA37A"/><stop offset="1" stop-color="#3E7C59"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#tp-bg)"/>
+  <!-- sun -->
+  <circle data-core cx="64" cy="62" r="26" fill="#F2BE5A"/>
+  <!-- ground -->
+  <path d="M0 244 C 100 232, 150 252, 250 240 S 360 234, 400 244 L400 300 L0 300Z" fill="#C7A878" opacity="0.5"/>
+  <path d="M0 258 C 120 248, 180 268, 280 256 S 380 252, 400 260 L400 300 L0 300Z" fill="#6B4F35" opacity="0.45"/>
+  <!-- swaying tree -->
+  <g transform="translate(196,250)" data-sway>
+    <rect x="-7" y="-70" width="14" height="74" rx="6" fill="#6B4F35"/>
+    <g data-shimmer>
+      <circle cx="0" cy="-96" r="44" fill="#3E7C59"/>
+      <circle cx="-34" cy="-74" r="30" fill="#4C8C66"/>
+      <circle cx="34" cy="-74" r="30" fill="#4C8C66"/>
+      <circle cx="0" cy="-120" r="30" fill="#5FA37A"/>
+    </g>
+  </g>
+  <!-- small sapling -->
+  <g transform="translate(300,256)" data-sway style="animation-delay:.6s">
+    <rect x="-3" y="-30" width="6" height="32" rx="3" fill="#6B4F35"/>
+    <path d="M0 -28 C -2 -40, -16 -44, -22 -54 C -8 -50, 0 -42, 0 -28 Z" fill="#3E7C59"/>
+    <path d="M0 -28 C 2 -40, 16 -44, 22 -54 C 8 -50, 0 -42, 0 -28 Z" fill="#4C8C66"/>
+  </g>
+  <!-- watering can + drops -->
+  <g transform="translate(110,120)">
+    <g fill="url(#tp-can)" stroke="#14352A" stroke-width="2">
+      <rect x="0" y="6" width="46" height="34" rx="8"/>
+      <path d="M46 14 q22 0 30 22" fill="none" stroke="#14352A" stroke-width="5" stroke-linecap="round"/>
+      <path d="M2 6 q20 -16 40 0 z" fill="#3E7C59"/>
+      <rect x="-12" y="12" width="14" height="7" rx="3"/>
+    </g>
+    <g fill="#5FA37A">
+      <circle data-drop cx="78" cy="46" r="4"/>
+      <circle data-drop cx="86" cy="44" r="4" style="animation-delay:.8s"/>
+      <circle data-drop cx="82" cy="48" r="4" style="animation-delay:1.5s"/>
+    </g>
+  </g>
+</svg></div>
+        <div style="padding:1.5rem 1.5rem 1.8rem">
+          <h3>Tree Plantation</h3>
+        </div>
+      </article>
+      <article class="card reveal" style="padding:0;overflow:hidden">
+        <div class="illo-card"><svg class="anim illo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Biodiversity" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bd-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E5EFE8"/><stop offset="1" stop-color="#F3F5F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bd-bg)"/>
+  <!-- flying bird (flapping) -->
+  <g data-bird>
+    <g data-flap stroke="#14352A" stroke-width="5" fill="none" stroke-linecap="round">
+      <path d="M-16 0 Q0 -16 16 0"/>
+      <path d="M16 0 Q32 -16 48 0"/>
+    </g>
+  </g>
+  <!-- second bird -->
+  <g data-bird style="animation-delay:4s">
+    <g data-flap stroke="#3E7C59" stroke-width="4" fill="none" stroke-linecap="round" style="animation-delay:.2s" transform="scale(.7)">
+      <path d="M-16 0 Q0 -16 16 0"/><path d="M16 0 Q32 -16 48 0"/>
+    </g>
+  </g>
+  <!-- foliage -->
+  <path d="M0 270 C 70 250, 120 282, 200 262 S 340 250, 400 270 L400 300 L0 300Z" fill="#3E7C59" opacity="0.9"/>
+  <path d="M0 282 C 90 268, 150 292, 250 276 S 360 270, 400 284 L400 300 L0 300Z" fill="#14352A" opacity="0.5"/>
+  <!-- blooming flower -->
+  <g transform="translate(96,232)">
+    <line x1="0" y1="0" x2="0" y2="-44" stroke="#3E7C59" stroke-width="4"/>
+    <g data-bloom transform="translate(0,-50)">
+      <g fill="#E486A8">
+        <ellipse cx="0" cy="-14" rx="8" ry="14"/><ellipse cx="13" cy="-4" rx="8" ry="14" transform="rotate(72 13 -4)"/>
+        <ellipse cx="8" cy="12" rx="8" ry="14" transform="rotate(144 8 12)"/><ellipse cx="-8" cy="12" rx="8" ry="14" transform="rotate(216 -8 12)"/>
+        <ellipse cx="-13" cy="-4" rx="8" ry="14" transform="rotate(288 -13 -4)"/>
+      </g>
+      <circle r="9" fill="#D89A2B"/>
+    </g>
+  </g>
+  <!-- butterfly -->
+  <g transform="translate(290,150)" data-bob>
+    <g data-wing>
+      <path d="M0 0 C -26 -22, -34 6, -6 10 C -22 22, -4 26, 0 6 Z" fill="#D89A2B" opacity="0.9"/>
+    </g>
+    <g data-wing style="animation-delay:.02s" transform="scale(-1,1)">
+      <path d="M0 0 C -26 -22, -34 6, -6 10 C -22 22, -4 26, 0 6 Z" fill="#E0A84A" opacity="0.9"/>
+    </g>
+    <rect x="-2" y="-8" width="4" height="22" rx="2" fill="#14352A"/>
+  </g>
+  <!-- leaf -->
+  <g transform="translate(196,212)" data-shimmer>
+    <path d="M0 0 C 16 -10, 34 -6, 44 -22 C 30 -16, 10 -14, 0 0 Z" fill="#4C8C66"/>
+  </g>
+</svg></div>
+        <div style="padding:1.5rem 1.5rem 1.8rem">
+          <h3>Biodiversity</h3>
+        </div>
+      </article>
+      <article class="card reveal" style="padding:0;overflow:hidden">
+        <div class="illo-card"><svg class="anim illo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Capacity building of rural people" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cb-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E7EFE9"/><stop offset="1" stop-color="#F3F5F0"/>
+    </linearGradient>
+    <radialGradient id="cb-bulb" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#FFE39A"/><stop offset="1" stop-color="#D89A2B"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#cb-bg)"/>
+  <!-- knowledge ripples -->
+  <g transform="translate(200,96)">
+    <circle data-ripple r="40" fill="none" stroke="#3E7C59" stroke-width="3"/>
+    <circle data-ripple r="40" fill="none" stroke="#3E7C59" stroke-width="3" style="animation-delay:1s"/>
+    <circle data-ripple r="40" fill="none" stroke="#3E7C59" stroke-width="3" style="animation-delay:2s"/>
+  </g>
+  <!-- glowing lightbulb -->
+  <g transform="translate(200,90)">
+    <circle data-glow r="34" fill="#FCEFC4"/>
+    <path d="M-16 6 a16 16 0 1 1 32 0 c0 9 -6 12 -8 18 h-16 c-2 -6 -8 -9 -8 -18 z" fill="url(#cb-bulb)" stroke="#14352A" stroke-width="2.5"/>
+    <rect x="-8" y="26" width="16" height="6" rx="2" fill="#14352A"/>
+    <rect x="-6" y="33" width="12" height="5" rx="2" fill="#14352A"/>
+  </g>
+  <!-- rising skill bars -->
+  <g transform="translate(56,250)">
+    <rect data-bar x="0" y="-40" width="20" height="40" rx="4" fill="#BFD3C4"/>
+    <rect data-bar x="28" y="-64" width="20" height="64" rx="4" fill="#5FA37A" style="animation-delay:.3s"/>
+    <rect data-bar x="56" y="-88" width="20" height="88" rx="4" fill="#3E7C59" style="animation-delay:.6s"/>
+  </g>
+  <!-- three people -->
+  <g transform="translate(180,250)" fill="#14352A">
+    <g transform="translate(-40,0)" data-bob style="animation-delay:.2s">
+      <circle cx="0" cy="-44" r="14"/><path d="M-20 0 C -20 -22, 20 -22, 20 0 Z"/>
+    </g>
+    <g transform="translate(8,4)" data-bob>
+      <circle cx="0" cy="-50" r="16" fill="#3E7C59"/><path d="M-24 4 C -24 -22, 24 -22, 24 4 Z" fill="#3E7C59"/>
+    </g>
+    <g transform="translate(56,0)" data-bob style="animation-delay:.5s">
+      <circle cx="0" cy="-44" r="14"/><path d="M-20 0 C -20 -22, 20 -22, 20 0 Z"/>
+    </g>
+  </g>
+</svg></div>
+        <div style="padding:1.5rem 1.5rem 1.8rem">
+          <h3>Capacity Building of Rural People</h3>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="reveal">
+      <a href="#services" data-link class="btn btn-outline">Explore what we do</a>
+    </div>
+  </div>
+</section>
+
+<section class="block block-alt">
+  <div class="wrap">
+    <div class="reveal" style="max-width:700px">
+      <span class="eyebrow">Our objectives</span>
+      <h2>Five commitments that guide our work</h2>
+    </div>
+    <div class="grid-3">
+      <article class="card reveal">
+        <span class="obj-num">01</span>
+        <h3>Environmental Preservation</h3>
+        <p>Protecting and restoring natural ecosystems through afforestation, water conservation, soil health improvement, and sustainable resource management.</p>
+      </article>
+      <article class="card reveal">
+        <span class="obj-num">02</span>
+        <h3>Addressing Climate Change</h3>
+        <p>Raising awareness, promoting climate-resilient communities, encouraging low-carbon lifestyles, and supporting local climate action initiatives.</p>
+      </article>
+      <article class="card reveal">
+        <span class="obj-num">03</span>
+        <h3>Biodiversity Conservation</h3>
+        <p>Conserving native species and habitats, and encouraging community participation in safeguarding local flora and fauna.</p>
+      </article>
+      <article class="card reveal">
+        <span class="obj-num">04</span>
+        <h3>Plastic Awareness</h3>
+        <p>Educating communities, schools and institutions on the harmful effects of plastic pollution through workshops, campaigns and outreach.</p>
+      </article>
+      <article class="card reveal">
+        <span class="obj-num">05</span>
+        <h3>Plastic Reduction &amp; Alternatives</h3>
+        <p>Promoting plastic-free practices, eco-friendly alternatives, and behavioural change toward sustainable consumption habits.</p>
+      </article>
+      <article class="card reveal" style="background:var(--canopy);color:#fff">
+        <h3 style="color:#fff">Want the full picture?</h3>
+        <p style="color:rgba(255,255,255,.82)">See how these objectives translate into programs on the ground across Chhattisgarh.</p>
+        <a class="more" href="#services" data-link style="color:var(--marigold)">EXPLORE OUR WORK &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="reveal" style="max-width:700px">
+      <span class="eyebrow">Recent programs</span>
+      <h2>From conclaves to village workshops</h2>
+      <p class="lede" style="margin-top:.8rem">A snapshot of our 2026 work. See the full list of climate conclaves and BMC training workshops on the programs page.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card reveal">
+        <span class="tag">Climate Conclave</span>
+        <h3>Climate Change Conclave, Durg</h3>
+        <p>A multi-stakeholder platform at the Forest Rest House, Durg bringing together officials, experts, academics and students around climate action and Mission LiFE.</p>
+        <a class="more" href="#projects" data-link>VIEW PROGRAM &rarr;</a>
+      </article>
+      <article class="card reveal">
+        <span class="tag">BMC Training</span>
+        <h3>BMC Workshops, Dhamtari</h3>
+        <p>Capacity building for Biodiversity Management Committees on PBR, ABS, avitourism and conservation of rare species like Tendu and pangolins.</p>
+        <a class="more" href="#projects" data-link>VIEW PROGRAM &rarr;</a>
+      </article>
+      <article class="card reveal">
+        <span class="tag">Workshop</span>
+        <h3>Climate Workshop, Kanker</h3>
+        <p>A data-driven session on Chhattisgarh's shifting rainfall, forest fires and rainfed agriculture &mdash; and the resilience strategies the state needs.</p>
+        <a class="more" href="#projects" data-link>VIEW PROGRAM &rarr;</a>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="reveal">
+      <a href="#projects" data-link class="btn btn-outline">See all programs</a>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap quote-inner reveal">
+    <blockquote>"Together, we can create lasting and measurable change for our planet and future generations."</blockquote>
+    <div class="by">&mdash; Earth Retreat Foundation</div>
+  </div>
+</section>
+
+<section class="cta">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Partner with us on the ground</h2>
+      <p>We welcome institutions, organizations and individuals who share our vision of environmental sustainability and climate responsibility.</p>
+    </div>
+    <a href="#contact" data-link class="btn btn-solid">Get involved</a>
+  </div>
+</section>
+
+
+</main>
+<main id="page-about" class="page">
+<section class="page-hero">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">About us</span>
+    <h1>Climate action, rooted in community</h1>
+    <p>Who we are, the objectives that guide us, and the districts of Chhattisgarh where we work.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <span class="eyebrow">Who we are</span>
+      <h2>Grassroots work, driven by collective action</h2>
+      <p class="lede" style="margin-top:1rem">Since its inception, Earth Retreat Foundation has worked rigorously and consistently towards climate change mitigation and environmental protection.</p>
+      <p style="margin-top:1rem">We are actively engaged in awareness programs, community capacity development, biodiversity conservation initiatives, and sustainable environmental practices at the grassroots level. Our commitment is driven by the belief that collective action and informed communities are the key to building a climate-resilient future.</p>
+      <p style="margin-top:1rem">We remain dedicated to expanding our impact through meaningful associations, strategic collaborations, and capacity-building workshops &mdash; welcoming partnerships with institutions, organizations and individuals who share our vision.</p>
+    </div>
+    <div class="ph reveal">
+      <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+      <span>REPLACE WITH PHOTO &mdash; about.jpg</span>
+    </div>
+  </div>
+</section>
+
+<section class="block block-alt">
+  <div class="wrap">
+    <div class="reveal" style="max-width:700px">
+      <span class="eyebrow">Our objectives</span>
+      <h2>What we set out to achieve</h2>
+    </div>
+    <div class="grid-2">
+      <article class="card reveal">
+        <span class="obj-num">01</span><h3>Environmental Preservation</h3>
+        <p>To protect and restore natural ecosystems through afforestation, water conservation, soil health improvement, and the promotion of sustainable resource management practices.</p>
+      </article>
+      <article class="card reveal">
+        <span class="obj-num">02</span><h3>Addressing the Climate Change Crisis</h3>
+        <p>To raise awareness about climate change, promote climate-resilient communities, encourage low-carbon lifestyles, and support local climate action initiatives that reduce environmental impact.</p>
+      </article>
+      <article class="card reveal">
+        <span class="obj-num">03</span><h3>Biodiversity Conservation</h3>
+        <p>To conserve and enhance biodiversity by protecting native species, restoring habitats, and encouraging community participation in safeguarding local flora and fauna.</p>
+      </article>
+      <article class="card reveal">
+        <span class="obj-num">04</span><h3>Plastic Awareness</h3>
+        <p>To educate communities, schools and institutions about the harmful effects of plastic pollution on ecosystems, wildlife and human health through workshops, campaigns and outreach programs.</p>
+      </article>
+      <article class="card reveal">
+        <span class="obj-num">05</span><h3>Plastic Reduction &amp; Sustainable Alternatives</h3>
+        <p>To actively promote plastic-free practices by encouraging eco-friendly alternatives, conducting zero-plastic workshops, and supporting behavioural change toward sustainable consumption habits.</p>
+      </article>
+      <article class="card reveal" style="background:var(--canopy);color:#fff">
+        <h3 style="color:#fff">Our guiding belief</h3>
+        <p style="color:rgba(255,255,255,.85)">Sustainable development cannot be achieved without active public participation. We build awareness and capacity so communities lead their own conservation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap quote-inner reveal">
+    <blockquote>"Together, we can create lasting and measurable change for our planet and future generations."</blockquote>
+    <div class="by">&mdash; Earth Retreat Foundation</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="reveal" style="max-width:700px">
+      <span class="eyebrow">Our reach</span>
+      <h2>Where we work</h2>
+      <p class="lede" style="margin-top:.8rem">Our programs have reached villages across multiple districts of Chhattisgarh, working hand-in-hand with forest staff, BMC members and local communities.</p>
+    </div>
+    <div class="reach-grid">
+      <div class="reach reveal"><div class="v">Piperchedi</div><div class="dist">Gariyaband</div></div>
+      <div class="reach reveal"><div class="v">Sonjhari, South Singpur</div><div class="dist">Dhamtari</div></div>
+      <div class="reach reveal"><div class="v">Dokal, Keregaon</div><div class="dist">Dhamtari</div></div>
+      <div class="reach reveal"><div class="v">Mohndi, North Singpur</div><div class="dist">Dhamtari</div></div>
+      <div class="reach reveal"><div class="v">Gattasilli, Birgudi</div><div class="dist">Dhamtari</div></div>
+      <div class="reach reveal"><div class="v">Badbhoom, Gurur</div><div class="dist">Balod</div></div>
+      <div class="reach reveal"><div class="v">Dugli, Birgudi</div><div class="dist">Dhamtari</div></div>
+      <div class="reach reveal"><div class="v">Mohla &amp; Ambagarh Chowki</div><div class="dist">Mohla-Manpur</div></div>
+      <div class="reach reveal"><div class="v">Durg &amp; Kanker</div><div class="dist">Conclaves &amp; Workshops</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block block-alt">
+  <div class="wrap">
+    <div class="reveal" style="max-width:700px">
+      <span class="eyebrow">Partners</span>
+      <h2>Who we work with</h2>
+      <p class="lede" style="margin-top:.8rem">As a technical partner, we support government departments in delivering biodiversity and climate programs on the ground.</p>
+    </div>
+    <div class="partners-strip reveal">
+      <span class="partner-chip">CG Department of Forest &amp; Climate Change</span>
+      <span class="partner-chip">CG State Biodiversity Board</span>
+      <span class="partner-chip">CG State Climate Change Cell</span>
+      <span class="partner-chip">Local BMCs &amp; Gram Panchayats</span>
+      <span class="partner-chip">Self-Help Groups</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Share our vision?</h2>
+      <p>We welcome partnerships with institutions, organizations and individuals committed to environmental sustainability.</p>
+    </div>
+    <a href="#contact" data-link class="btn btn-solid">Partner with us</a>
+  </div>
+</section>
+
+
+</main>
+<main id="page-services" class="page">
+<section class="page-hero">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">What we do</span>
+    <h1>From objectives to action</h1>
+    <p>Five focus areas through which we deliver climate awareness, biodiversity governance and sustainable livelihoods.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="reveal" style="max-width:720px">
+      <span class="eyebrow">Focus areas</span>
+      <h2>Five themes that shape our work</h2>
+      <p class="lede" style="margin-top:.8rem">Everything we do on the ground in Chhattisgarh flows from five connected commitments &mdash; from climate awareness to the rural communities who carry conservation forward.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <span class="eyebrow">Climate Change</span>
+      <h2>Awareness that reaches the household</h2>
+      <p class="lede" style="margin-top:1rem">We bring climate science down to everyday life through conclaves and village workshops &mdash; like our Durg Climate Conclave and the Kanker workshop on Chhattisgarh's shifting rainfall and forest fires. We promote climate-resilient communities, low-carbon lifestyles, and Mission LiFE's shift from mindless consumption to mindful utilisation.</p>
+      <ul class="checklist">
+        <li>Climate conclaves and multi-stakeholder dialogues</li>
+        <li>Village workshops on rainfall, forest fires and rainfed agriculture</li>
+        <li>Promoting Mission LiFE and Pro-Planet habits</li>
+      </ul>
+    </div>
+    <div class="illo-wrap reveal"><svg class="anim illo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Climate change" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cc-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E7EFE9"/><stop offset="1" stop-color="#F3F5F0"/>
+    </linearGradient>
+    <radialGradient id="cc-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#F2BE5A"/><stop offset="0" stop-color="#F2BE5A"/>
+      <stop offset="1" stop-color="#D89A2B"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#cc-sky)"/>
+  <!-- sun with rotating rays -->
+  <g transform="translate(132,128)">
+    <g data-spin>
+      <g stroke="#D89A2B" stroke-width="5" stroke-linecap="round">
+        <line x1="0" y1="-58" x2="0" y2="-74"/>
+        <line x1="41" y1="-41" x2="52" y2="-52"/>
+        <line x1="58" y1="0" x2="74" y2="0"/>
+        <line x1="41" y1="41" x2="52" y2="52"/>
+        <line x1="0" y1="58" x2="0" y2="74"/>
+        <line x1="-41" y1="41" x2="-52" y2="52"/>
+        <line x1="-58" y1="0" x2="-74" y2="0"/>
+        <line x1="-41" y1="-41" x2="-52" y2="-52"/>
+      </g>
+    </g>
+    <circle data-core r="40" fill="url(#cc-sun)"/>
+  </g>
+  <!-- drifting cloud -->
+  <g data-cloud opacity="0.92">
+    <g fill="#FFFFFF" stroke="#CBDCCF" stroke-width="2">
+      <circle cx="60" cy="70" r="20"/><circle cx="86" cy="62" r="26"/>
+      <circle cx="114" cy="72" r="18"/><rect x="58" y="70" width="60" height="22" rx="11"/>
+    </g>
+  </g>
+  <!-- thermometer -->
+  <g transform="translate(312,84)">
+    <rect x="-11" y="-6" width="22" height="118" rx="11" fill="#FFFFFF" stroke="#14352A" stroke-width="4"/>
+    <circle cx="0" cy="128" r="22" fill="#14352A"/>
+    <rect data-merc x="-5" y="20" width="10" height="108" rx="5" fill="#D8552B"/>
+    <circle cx="0" cy="128" r="13" fill="#D8552B"/>
+  </g>
+  <!-- horizon -->
+  <path d="M0 250 C 90 235, 150 262, 240 246 S 360 235, 400 250 L400 300 L0 300 Z" fill="#DCE9DF"/>
+  <path d="M0 268 C 110 256, 180 278, 270 264 S 380 258, 400 268 L400 300 L0 300 Z" fill="#3E7C59" opacity="0.35"/>
+</svg></div>
+  </div>
+</section>
+
+<section class="block block-alt">
+  <div class="wrap two-col">
+    <div class="illo-wrap reveal"><svg class="anim illo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Plastic reduction" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pr-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EAF1EC"/><stop offset="1" stop-color="#F3F5F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#pr-bg)"/>
+  <!-- rotating recycling loop -->
+  <g transform="translate(200,150)">
+    <g data-spin>
+      <g fill="none" stroke="#3E7C59" stroke-width="14" stroke-linecap="round">
+        <path d="M0 -70 A70 70 0 0 1 60.6 35"/>
+        <path d="M60.6 35 A70 70 0 0 1 -60.6 35"/>
+        <path d="M-60.6 35 A70 70 0 0 1 0 -70"/>
+      </g>
+      <g fill="#3E7C59">
+        <path d="M0 -86 L16 -64 L-16 -64 Z"/>
+        <path d="M74 49 L56 24 L84 30 Z"/>
+        <path d="M-74 49 L-84 30 L-56 24 Z"/>
+      </g>
+    </g>
+    <!-- center: bottle fading to leaf -->
+    <g data-swap1>
+      <g transform="translate(-13,-22)" fill="#BFD3C4" stroke="#14352A" stroke-width="2.5">
+        <rect x="6" y="6" width="14" height="6" rx="2"/>
+        <path d="M5 12 h16 a4 4 0 0 1 4 4 v22 a6 6 0 0 1 -6 6 h-16 a6 6 0 0 1 -6 -6 v-22 a4 4 0 0 1 4 -4 z"/>
+      </g>
+    </g>
+    <g data-swap2>
+      <g transform="translate(0,0)">
+        <path d="M0 18 C 0 2, -14 -6, -20 -20 C -4 -16, 4 -6, 2 12 Z M0 18 C 0 4, 14 -4, 22 -16 C 8 -10, 2 -2, 0 18 Z" fill="#3E7C59"/>
+        <line x1="0" y1="20" x2="0" y2="2" stroke="#14352A" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+  <!-- sparkles -->
+  <g fill="#D89A2B">
+    <circle data-glow cx="92" cy="84" r="4"/>
+    <circle data-glow cx="312" cy="96" r="3.5" style="animation-delay:.8s"/>
+    <circle data-glow cx="300" cy="214" r="4" style="animation-delay:1.4s"/>
+    <circle data-glow cx="100" cy="214" r="3.5" style="animation-delay:.4s"/>
+  </g>
+</svg></div>
+    <div class="reveal">
+      <span class="eyebrow">Plastic Reduction</span>
+      <h2>Towards plastic-free villages</h2>
+      <p class="lede" style="margin-top:1rem">We educate communities, schools and institutions about the harm of plastic pollution to ecosystems, wildlife and health &mdash; then help them act. We promote eco-friendly alternatives, run zero-plastic workshops, and support simple, practical waste solutions on the ground.</p>
+      <ul class="checklist">
+        <li>Plastic-awareness campaigns and outreach</li>
+        <li>Reducing single-use plastics in events and villages</li>
+        <li>Promoting eco-friendly alternatives and waste solutions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <span class="eyebrow">Tree Plantation</span>
+      <h2>Restoring forests, species by species</h2>
+      <p class="lede" style="margin-top:1rem">Afforestation and native-species plantation sit at the heart of our environmental preservation work. We restore degraded habitats and champion threatened local species &mdash; like Tendu, the &lsquo;Green Gold&rsquo; of Chhattisgarh &mdash; exploring stump planting, grafting and budding where seed germination is slow.</p>
+      <ul class="checklist">
+        <li>Afforestation with native, site-matched species</li>
+        <li>Reviving threatened species such as Tendu</li>
+        <li>Supporting community nurseries and survival monitoring</li>
+      </ul>
+    </div>
+    <div class="illo-wrap reveal"><svg class="anim illo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Tree plantation" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tp-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E7EFE9"/><stop offset="1" stop-color="#F3F5F0"/>
+    </linearGradient>
+    <radialGradient id="tp-can" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#5FA37A"/><stop offset="1" stop-color="#3E7C59"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#tp-bg)"/>
+  <!-- sun -->
+  <circle data-core cx="64" cy="62" r="26" fill="#F2BE5A"/>
+  <!-- ground -->
+  <path d="M0 244 C 100 232, 150 252, 250 240 S 360 234, 400 244 L400 300 L0 300Z" fill="#C7A878" opacity="0.5"/>
+  <path d="M0 258 C 120 248, 180 268, 280 256 S 380 252, 400 260 L400 300 L0 300Z" fill="#6B4F35" opacity="0.45"/>
+  <!-- swaying tree -->
+  <g transform="translate(196,250)" data-sway>
+    <rect x="-7" y="-70" width="14" height="74" rx="6" fill="#6B4F35"/>
+    <g data-shimmer>
+      <circle cx="0" cy="-96" r="44" fill="#3E7C59"/>
+      <circle cx="-34" cy="-74" r="30" fill="#4C8C66"/>
+      <circle cx="34" cy="-74" r="30" fill="#4C8C66"/>
+      <circle cx="0" cy="-120" r="30" fill="#5FA37A"/>
+    </g>
+  </g>
+  <!-- small sapling -->
+  <g transform="translate(300,256)" data-sway style="animation-delay:.6s">
+    <rect x="-3" y="-30" width="6" height="32" rx="3" fill="#6B4F35"/>
+    <path d="M0 -28 C -2 -40, -16 -44, -22 -54 C -8 -50, 0 -42, 0 -28 Z" fill="#3E7C59"/>
+    <path d="M0 -28 C 2 -40, 16 -44, 22 -54 C 8 -50, 0 -42, 0 -28 Z" fill="#4C8C66"/>
+  </g>
+  <!-- watering can + drops -->
+  <g transform="translate(110,120)">
+    <g fill="url(#tp-can)" stroke="#14352A" stroke-width="2">
+      <rect x="0" y="6" width="46" height="34" rx="8"/>
+      <path d="M46 14 q22 0 30 22" fill="none" stroke="#14352A" stroke-width="5" stroke-linecap="round"/>
+      <path d="M2 6 q20 -16 40 0 z" fill="#3E7C59"/>
+      <rect x="-12" y="12" width="14" height="7" rx="3"/>
+    </g>
+    <g fill="#5FA37A">
+      <circle data-drop cx="78" cy="46" r="4"/>
+      <circle data-drop cx="86" cy="44" r="4" style="animation-delay:.8s"/>
+      <circle data-drop cx="82" cy="48" r="4" style="animation-delay:1.5s"/>
+    </g>
+  </g>
+</svg></div>
+  </div>
+</section>
+
+<section class="block block-alt">
+  <div class="wrap two-col">
+    <div class="illo-wrap reveal"><svg class="anim illo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Biodiversity" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bd-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E5EFE8"/><stop offset="1" stop-color="#F3F5F0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bd-bg)"/>
+  <!-- flying bird (flapping) -->
+  <g data-bird>
+    <g data-flap stroke="#14352A" stroke-width="5" fill="none" stroke-linecap="round">
+      <path d="M-16 0 Q0 -16 16 0"/>
+      <path d="M16 0 Q32 -16 48 0"/>
+    </g>
+  </g>
+  <!-- second bird -->
+  <g data-bird style="animation-delay:4s">
+    <g data-flap stroke="#3E7C59" stroke-width="4" fill="none" stroke-linecap="round" style="animation-delay:.2s" transform="scale(.7)">
+      <path d="M-16 0 Q0 -16 16 0"/><path d="M16 0 Q32 -16 48 0"/>
+    </g>
+  </g>
+  <!-- foliage -->
+  <path d="M0 270 C 70 250, 120 282, 200 262 S 340 250, 400 270 L400 300 L0 300Z" fill="#3E7C59" opacity="0.9"/>
+  <path d="M0 282 C 90 268, 150 292, 250 276 S 360 270, 400 284 L400 300 L0 300Z" fill="#14352A" opacity="0.5"/>
+  <!-- blooming flower -->
+  <g transform="translate(96,232)">
+    <line x1="0" y1="0" x2="0" y2="-44" stroke="#3E7C59" stroke-width="4"/>
+    <g data-bloom transform="translate(0,-50)">
+      <g fill="#E486A8">
+        <ellipse cx="0" cy="-14" rx="8" ry="14"/><ellipse cx="13" cy="-4" rx="8" ry="14" transform="rotate(72 13 -4)"/>
+        <ellipse cx="8" cy="12" rx="8" ry="14" transform="rotate(144 8 12)"/><ellipse cx="-8" cy="12" rx="8" ry="14" transform="rotate(216 -8 12)"/>
+        <ellipse cx="-13" cy="-4" rx="8" ry="14" transform="rotate(288 -13 -4)"/>
+      </g>
+      <circle r="9" fill="#D89A2B"/>
+    </g>
+  </g>
+  <!-- butterfly -->
+  <g transform="translate(290,150)" data-bob>
+    <g data-wing>
+      <path d="M0 0 C -26 -22, -34 6, -6 10 C -22 22, -4 26, 0 6 Z" fill="#D89A2B" opacity="0.9"/>
+    </g>
+    <g data-wing style="animation-delay:.02s" transform="scale(-1,1)">
+      <path d="M0 0 C -26 -22, -34 6, -6 10 C -22 22, -4 26, 0 6 Z" fill="#E0A84A" opacity="0.9"/>
+    </g>
+    <rect x="-2" y="-8" width="4" height="22" rx="2" fill="#14352A"/>
+  </g>
+  <!-- leaf -->
+  <g transform="translate(196,212)" data-shimmer>
+    <path d="M0 0 C 16 -10, 34 -6, 44 -22 C 30 -16, 10 -14, 0 0 Z" fill="#4C8C66"/>
+  </g>
+</svg></div>
+    <div class="reveal">
+      <span class="eyebrow">Biodiversity</span>
+      <h2>Protecting the species communities live alongside</h2>
+      <p class="lede" style="margin-top:1rem">We conserve and enhance biodiversity by protecting native species and habitats, and by helping villages document their natural wealth in the People's Biodiversity Register (PBR). From medicinal plants to endangered pangolins and rich birdlife, we turn local knowledge into lasting conservation.</p>
+      <ul class="checklist">
+        <li>Strengthening BMCs and preparing PBRs</li>
+        <li>Documenting rare, medicinal and endangered species</li>
+        <li>Avitourism and bird-watching for conservation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap two-col">
+    <div class="reveal">
+      <span class="eyebrow">Capacity Building of Rural People</span>
+      <h2>Communities that lead their own conservation</h2>
+      <p class="lede" style="margin-top:1rem">Sustainable development cannot happen without active public participation. We build the capacity of BMC members, forest staff and women's self-help groups &mdash; on biodiversity, PBR, and Access &amp; Benefit Sharing (ABS) &mdash; and open up eco-tourism and home-stay livelihoods so conservation also brings income.</p>
+      <ul class="checklist">
+        <li>Training for BMC members, forest staff and SHGs</li>
+        <li>Hands-on PBR and ABS literacy</li>
+        <li>Eco-tourism and home-stay livelihood models</li>
+      </ul>
+    </div>
+    <div class="illo-wrap reveal"><svg class="anim illo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Capacity building of rural people" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cb-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E7EFE9"/><stop offset="1" stop-color="#F3F5F0"/>
+    </linearGradient>
+    <radialGradient id="cb-bulb" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#FFE39A"/><stop offset="1" stop-color="#D89A2B"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#cb-bg)"/>
+  <!-- knowledge ripples -->
+  <g transform="translate(200,96)">
+    <circle data-ripple r="40" fill="none" stroke="#3E7C59" stroke-width="3"/>
+    <circle data-ripple r="40" fill="none" stroke="#3E7C59" stroke-width="3" style="animation-delay:1s"/>
+    <circle data-ripple r="40" fill="none" stroke="#3E7C59" stroke-width="3" style="animation-delay:2s"/>
+  </g>
+  <!-- glowing lightbulb -->
+  <g transform="translate(200,90)">
+    <circle data-glow r="34" fill="#FCEFC4"/>
+    <path d="M-16 6 a16 16 0 1 1 32 0 c0 9 -6 12 -8 18 h-16 c-2 -6 -8 -9 -8 -18 z" fill="url(#cb-bulb)" stroke="#14352A" stroke-width="2.5"/>
+    <rect x="-8" y="26" width="16" height="6" rx="2" fill="#14352A"/>
+    <rect x="-6" y="33" width="12" height="5" rx="2" fill="#14352A"/>
+  </g>
+  <!-- rising skill bars -->
+  <g transform="translate(56,250)">
+    <rect data-bar x="0" y="-40" width="20" height="40" rx="4" fill="#BFD3C4"/>
+    <rect data-bar x="28" y="-64" width="20" height="64" rx="4" fill="#5FA37A" style="animation-delay:.3s"/>
+    <rect data-bar x="56" y="-88" width="20" height="88" rx="4" fill="#3E7C59" style="animation-delay:.6s"/>
+  </g>
+  <!-- three people -->
+  <g transform="translate(180,250)" fill="#14352A">
+    <g transform="translate(-40,0)" data-bob style="animation-delay:.2s">
+      <circle cx="0" cy="-44" r="14"/><path d="M-20 0 C -20 -22, 20 -22, 20 0 Z"/>
+    </g>
+    <g transform="translate(8,4)" data-bob>
+      <circle cx="0" cy="-50" r="16" fill="#3E7C59"/><path d="M-24 4 C -24 -22, 24 -22, 24 4 Z" fill="#3E7C59"/>
+    </g>
+    <g transform="translate(56,0)" data-bob style="animation-delay:.5s">
+      <circle cx="0" cy="-44" r="14"/><path d="M-20 0 C -20 -22, 20 -22, 20 0 Z"/>
+    </g>
+  </g>
+</svg></div>
+  </div>
+</section>
+
+<section class="cta">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Invite us for a workshop or conclave</h2>
+      <p>We design climate, biodiversity and plastic-awareness sessions for departments, schools and communities.</p>
+    </div>
+    <a href="#contact" data-link class="btn btn-solid">Get in touch</a>
+  </div>
+</section>
+
+
+</main>
+<main id="page-projects" class="page">
+<section class="page-hero">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">Programs</span>
+    <h1>Work you can walk through</h1>
+    <p>Our 2026 climate conclaves and BMC training workshops, with the species and livelihood learnings they surfaced.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="reveal" style="max-width:720px">
+      <span class="eyebrow">2026 programs</span>
+      <h2>Conclaves, workshops &amp; field training</h2>
+      <p class="lede" style="margin-top:.8rem">A record of our recent climate conclaves and BMC capacity-building workshops across Chhattisgarh.</p>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="on" data-lang="en">English</button>
+        <button type="button" data-lang="hi">हिंदी</button>
+      </div>
+      <div class="events">
+      <article class="event reveal">
+        <div class="date"><div class="d">17</div><div class="m">Mar 2026</div></div>
+        <div>
+          <div class="meta">Forest Rest House, Durg</div>
+          <h3>Climate Change Conclave, Durg</h3>
+          <div class="en"><p>A multi-stakeholder conclave bringing together government officials, environmental experts, academics, students and civil society. Sessions covered plastic pollution, the Chhattisgarh Eco-Restoration Policy, the economics of climate change, land restoration, and bird and wetland conservation. The DFO introduced Mission LiFE and its Pro-Planet People vision, followed by the “Kala Jattha” cultural programme and a field visit to Talapuri Wetland.</p></div><div class="hi"><p lang="hi">डर्ग के वन विश्राम गृह में आयोजित जलवायु परिवर्तन सम्मेलन में सरकारी अधिकारी, पर्यावरण विशेषज्ञ, शिक्षाविद और छात्र एक साथ आए। सत्रों में प्लास्टिक प्रदूषण, छत्तीसगढ़ इको-रेस्टोरेशन नीति, जलवायु परिवर्तन के आर्थिक प्रभाव, भूमि पुनर्स्थापन और पक्षी एवं आर्द्रभूमि संरक्षण पर चर्चा हुई। डीएफओ ने मिशन लाइफ (LiFE) प्रस्तुत किया, इसके बाद &ldquo;कला जत्था&rdquo; सांस्कृतिक कार्यक्रम और तालापुरी आर्द्रभूमि का भ्रमण हुआ।</p></div>
+          <div class="partners">Overall message: “Save Environment, Save Future.”</div>
+        </div>
+      </article>
+      <article class="event reveal">
+        <div class="date"><div class="d">19</div><div class="m">Mar 2026</div></div>
+        <div>
+          <div class="meta">Makdi Hotel, Kanker</div>
+          <h3>Climate Change Workshop, Kanker</h3>
+          <div class="en"><p>A data-driven workshop on the visible effects of climate change in Chhattisgarh — average temperatures of 25–26°C, declining and irregular rainfall, and rising forest fires. With 44% forest cover and ~22 million people dependent on forests, the session focused on climate-smart agriculture, sustainable forest management, water conservation and community-based resilience.</p></div><div class="hi"><p lang="hi">कांकेर में आयोजित कार्यशाला में छत्तीसगढ़ में जलवायु परिवर्तन के प्रभावों पर आंकड़ों के साथ चर्चा हुई &mdash; औसत तापमान 25&ndash;26&deg;C, घटती और अनियमित वर्षा, तथा बढ़ती वनाग्नि। लगभग 44% वन क्षेत्र और करीब 2.2 करोड़ वन-निर्भर लोगों के साथ, सत्र जलवायु-स्मार्ट कृषि, सतत वन प्रबंधन, जल संरक्षण और समुदाय-आधारित अनुकूलन पर केंद्रित रहा।</p></div>
+          <div class="partners">Organized by CG Forest &amp; Climate Change Dept, CG State Climate Change &amp; Earth Retreat Foundation</div>
+        </div>
+      </article>
+      <article class="event reveal">
+        <div class="date"><div class="d">11</div><div class="m">May 2026</div></div>
+        <div>
+          <div class="meta">North Singpur, Dhamtari — Day 1</div>
+          <h3>BMC Training &amp; Awareness, Mohndi</h3>
+          <div class="en"><p>A BMC strengthening programme on Biodiversity, BMCs, PBR and ABS. Sessions covered the roles of BMCs, the People's Biodiversity Register, Access &amp; Benefit Sharing, the importance of birds and trees, and an avitourism model to generate livelihoods through bird-watching. Participants documented rare and unique species of the Dhamtari region.</p></div><div class="hi"><p lang="hi">जैव विविधता, बीएमसी, पीबीआर और एबीएस पर बीएमसी सशक्तिकरण कार्यक्रम। सत्रों में बीएमसी की भूमिका, जन जैव विविधता रजिस्टर (PBR), एक्सेस एंड बेनिफिट शेयरिंग (ABS), पक्षियों एवं वृक्षों का महत्व, और बर्ड-वॉचिंग के माध्यम से आजीविका हेतु एविटूरिज्म मॉडल शामिल रहे। प्रतिभागियों ने धमतरी क्षेत्र की दुर्लभ प्रजातियों का दस्तावेज़ीकरण किया।</p></div>
+          <div class="partners">Technical Partner: Earth Retreat Foundation</div>
+        </div>
+      </article>
+      <article class="event reveal">
+        <div class="date"><div class="d">12</div><div class="m">May 2026</div></div>
+        <div>
+          <div class="meta">Birgudi, Dhamtari — Day 2</div>
+          <h3>BMC Training &amp; Awareness, Dugli</h3>
+          <div class="en"><p>Held at the Dugli Forest Range office with BMC members, women's self-help groups, forest officers and villagers. Experts covered PBR, rare tree species like Dahiman, and the avitourism potential of this area bordering the Udanti-Sitanadi Tiger Reserve. A group activity rewarded participants for naming rare and medicinal species, followed by a field visit to the hills and the tourist village of Jabarra.</p></div><div class="hi"><p lang="hi">दुगली वन परिक्षेत्र कार्यालय में बीएमसी सदस्यों, महिला स्वयं सहायता समूहों, वन अधिकारियों और ग्रामीणों के साथ आयोजित। विशेषज्ञों ने PBR, दहीमान जैसी दुर्लभ वृक्ष प्रजातियों, और उदंती-सीतानदी टाइगर रिज़र्व से लगे इस क्षेत्र में एविटूरिज्म की संभावनाओं पर चर्चा की। एक समूह गतिविधि में दुर्लभ एवं औषधीय प्रजातियों के नाम बताने वालों को पुरस्कृत किया गया, इसके बाद पहाड़ी क्षेत्रों और पर्यटन ग्राम जबर्रा का भ्रमण हुआ।</p></div>
+          <div class="partners">Technical Partner: Earth Retreat Foundation</div>
+        </div>
+      </article>
+      <article class="event reveal">
+        <div class="date"><div class="d">18</div><div class="m">May 2026</div></div>
+        <div>
+          <div class="meta">Gurur, Balod</div>
+          <h3>BMC Training &amp; Awareness, Badbhoom</h3>
+          <div class="en"><p>A BMC workshop for members, forest staff and women's self-help groups covering the People's Biodiversity Register, conservation of endangered tree species, and the role of local communities. The team met SHG women producing mahua pickle and discussed how the NGO can strengthen eco-tourism activities in Balod district.</p></div><div class="hi"><p lang="hi">ग्राम बडभूम, गुरूर (बालोद) में बीएमसी सदस्यों, वन कर्मचारियों और महिला स्वयं सहायता समूहों के लिए कार्यशाला। PBR, संकटग्रस्त वृक्ष प्रजातियों के संरक्षण, और स्थानीय समुदाय की भूमिका पर चर्चा हुई। टीम ने महुआ का अचार बनाने वाली महिलाओं से मुलाकात की और बालोद जिले के इको-टूरिज्म को सशक्त बनाने पर चर्चा की।</p></div>
+          <div class="partners">Technical Partner: Earth Retreat Foundation</div>
+        </div>
+      </article>
+      <article class="event reveal">
+        <div class="date"><div class="d">22</div><div class="m">May 2026</div></div>
+        <div>
+          <div class="meta">Mohla-Manpur-Ambagarh Chowki — Day 1 &amp; 2</div>
+          <h3>BMC Training, Mohla &amp; Ambagarh Chowki</h3>
+          <div class="en"><p>A two-day workshop with DFO, SDO, forest staff, JFM and BMC members on BMC importance, PBR, habitat conservation, eco-tourism, home-stays and ABS. A biodiversity contest rewarded villagers for documenting dozens of tree species. The team explored Mongra Dam, identifying strong potential for bamboo rafting, bird-watching, trekking, boating and camping as future eco-tourism activities.</p></div><div class="hi"><p lang="hi">डीएफओ, एसडीओ, वन कर्मचारियों, जेएफएम और बीएमसी सदस्यों के साथ दो-दिवसीय कार्यशाला &mdash; बीएमसी का महत्व, PBR, आवास संरक्षण, इको-टूरिज्म, होम-स्टे और ABS पर केंद्रित। जैव विविधता प्रतियोगिता में दर्जनों वृक्ष प्रजातियों के दस्तावेज़ीकरण के लिए ग्रामीणों को पुरस्कृत किया गया। टीम ने मोंगरा डेम का भ्रमण किया, जहाँ बम्बू राफ्टिंग, बर्ड-वॉचिंग, ट्रैकिंग, बोटिंग और कैंपिंग जैसी इको-टूरिज्म गतिविधियों की प्रबल संभावना दिखी।</p></div>
+          <div class="partners">Technical Partner: Earth Retreat Foundation</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block block-alt">
+  <div class="wrap">
+    <div class="reveal" style="max-width:720px">
+      <span class="eyebrow">Key learnings</span>
+      <h2>What the field is telling us</h2>
+    </div>
+    <div class="grid-3">
+      <article class="card reveal">
+        <span class="tag">Species</span>
+        <h3>Reviving Tendu</h3>
+        <p>Communities flagged the decline of Tendu &mdash; the “Green Gold” of Chhattisgarh. With germination success often near 40%, we are exploring stump planting, grafting and budding as vegetative alternatives.</p>
+      </article>
+      <article class="card reveal">
+        <span class="tag">Wildlife</span>
+        <h3>Protecting Pangolins</h3>
+        <p>Sightings of endangered pangolins were reported, with numbers falling due to poaching driven by misconceptions. Focused wildlife conservation work in these areas is a clear future priority.</p>
+      </article>
+      <article class="card reveal">
+        <span class="tag">Livelihoods</span>
+        <h3>Avitourism potential</h3>
+        <p>Areas bordering tiger reserves hold rich bird diversity. With training and surveys, BMCs can launch bird-watching enterprises that improve livelihoods and conserve species at once.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Bring a program to your district</h2>
+      <p>We work with forest departments, panchayats and institutions to deliver climate and biodiversity programs.</p>
+    </div>
+    <a href="#contact" data-link class="btn btn-solid">Start a conversation</a>
+  </div>
+</section>
+
+
+
+
+</main>
+<main id="page-team" class="page">
+<section class="page-hero">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">Team</span>
+    <h1>People who know the land</h1>
+    <p>The resource persons who lead our biodiversity and climate training across Chhattisgarh.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="reveal" style="max-width:720px">
+      <span class="eyebrow">Our experts</span>
+      <h2>The people leading our sessions</h2>
+      <p class="lede" style="margin-top:.8rem">Our resource persons deliver biodiversity and climate training across Chhattisgarh. Update names, photos and bios as your team grows.</p>
+    </div>
+    <div class="team-grid">
+      <article class="member reveal">
+        <div class="photo"><svg><use href="#person"/></svg></div>
+        <div class="info">
+          <h3>Shefali Yadav</h3>
+          <div class="role">Biodiversity &amp; BMC Specialist</div>
+          <p>Leads sessions on biodiversity, what BMCs are and how they are formed, their structure and member roles, and how committees can better conserve and manage regional biodiversity — drawing on successful BMC examples nationwide.</p>
+        </div>
+      </article>
+      <article class="member reveal">
+        <div class="photo"><svg><use href="#person"/></svg></div>
+        <div class="info">
+          <h3>Vipin Kujur</h3>
+          <div class="role">PBR Specialist</div>
+          <p>Focuses on the People's Biodiversity Register — its importance, benefits and challenges, the process of preparing a PBR, and the status of PBR work across India and Chhattisgarh.</p>
+        </div>
+      </article>
+      <article class="member reveal">
+        <div class="photo"><svg><use href="#person"/></svg></div>
+        <div class="info">
+          <h3>Rahul</h3>
+          <div class="role">Access &amp; Benefit Sharing (ABS)</div>
+          <p>Explains ABS and how communities benefit, the share due to BMCs, and monetary and non-monetary benefits — using cases like neem and turmeric to address bio-piracy.</p>
+        </div>
+      </article>
+      <article class="member reveal">
+        <div class="photo"><svg><use href="#person"/></svg></div>
+        <div class="info">
+          <h3>Hritik</h3>
+          <div class="role">Birds &amp; Avitourism</div>
+          <p>Presents on the importance and conservation of birds, regional avian diversity, and avitourism models through which BMCs can generate revenue from bird-watching activities.</p>
+        </div>
+      </article>
+      <article class="member reveal">
+        <div class="photo"><svg><use href="#person"/></svg></div>
+        <div class="info">
+          <h3>Sant Ram</h3>
+          <div class="role">Trees &amp; Forest Resources</div>
+          <p>Highlights trees as a biodiversity asset, the conservation of rare and endangered species such as Dahiman, and the medicinal and ecological value of local flora.</p>
+        </div>
+      </article>
+      <article class="member reveal">
+        <div class="photo"><svg><use href="#person"/></svg></div>
+        <div class="info">
+          <h3>Shantanu</h3>
+          <div class="role">BMC Marketing &amp; Livelihoods</div>
+          <p>Works on marketing opportunities for BMCs — connecting biodiversity, eco-tourism and value-added products to sustainable income for local communities.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Join us as an expert or volunteer</h2>
+      <p>We're always looking for ecologists, trainers and field volunteers for our workshops and surveys.</p>
+    </div>
+    <a href="#contact" data-link class="btn btn-solid">Reach out</a>
+  </div>
+</section>
+
+
+</main>
+<main id="page-contact" class="page">
+<section class="page-hero">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">Get involved</span>
+    <h1>Let's work together</h1>
+    <p>Partnerships, workshops, BMC support or volunteering — we'd love to hear from you.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Contact</span>
+      <h2>Let's work together</h2>
+      <p class="lede" style="margin:1rem 0 2rem">Whether you want to organise a workshop, partner on a program, or volunteer in the field &mdash; write to us and we'll respond within a few working days.</p>
+      <div class="info-line">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+        <div><strong>Email</strong>hello@earthretreatfoundation.com</div>
+      </div>
+      <div class="info-line">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M5 4h4l2 5-3 2a13 13 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        <div><strong>Phone</strong>+91 XXXXX XXXXX</div>
+      </div>
+      <div class="info-line">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><strong>Where we work</strong>Chhattisgarh, India<br>Durg &middot; Dhamtari &middot; Balod &middot; Kanker &middot; Gariyaband &middot; Mohla</div>
+      </div>
+    </div>
+    <div class="contact-card reveal">
+      <form id="contact-form">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" type="text" required placeholder="Full name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="topic">I'm interested in</label>
+          <select id="topic">
+            <option>Organising a workshop / conclave</option>
+            <option>Partnership / collaboration</option>
+            <option>BMC &amp; PBR support</option>
+            <option>Volunteering</option>
+            <option>Plastic awareness program</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" required placeholder="Tell us a little about your organisation or idea…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid" style="width:100%">Send message</button>
+        <p id="form-note" style="margin-top:.9rem;font-size:.9rem"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+</main>
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="#home" data-link>
+        <svg class="brand-mark" style="filter:brightness(0) invert(1)"><use href="#logo-mark"/></svg>
+        <div class="brand-name">Earth Retreat Foundation</div>
+      </a>
+      <p>A grassroots environmental NGO working on climate action and biodiversity conservation across Chhattisgarh.</p>
+    </div>
+    <div><h4>Explore</h4><ul>
+      <li><a href="#about" data-link>About us</a></li>
+      <li><a href="#services" data-link>What we do</a></li>
+      <li><a href="#projects" data-link>Programs</a></li>
+      <li><a href="#team" data-link>Team</a></li>
+    </ul></div>
+    <div><h4>Get involved</h4><ul>
+      <li><a href="#contact" data-link>Partner with us</a></li>
+      <li><a href="#contact" data-link>Volunteer</a></li>
+      <li><a href="#contact" data-link>Workshops</a></li>
+    </ul></div>
+    <div><h4>Contact</h4><ul>
+      <li>hello@earthretreatfoundation.com</li>
+      <li>+91 XXXXX XXXXX</li>
+      <li>Chhattisgarh, India</li>
+    </ul></div>
+  </div>
+  <div class="wrap foot-bar">
+    <span>&copy; 2026 EARTH RETREAT FOUNDATION</span>
+    <span>WWW.EARTHRETREATFOUNDATION.COM</span>
+  </div>
+</footer><script>
+document.documentElement.classList.remove('no-js');
+var pages={home:document.getElementById('page-home'),about:document.getElementById('page-about'),services:document.getElementById('page-services'),projects:document.getElementById('page-projects'),team:document.getElementById('page-team'),contact:document.getElementById('page-contact')};
+var navLinks=document.querySelector('.nav-links');
+var revealObs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');revealObs.unobserve(e.target);}});},{threshold:0.12});
+function showPage(name,push){if(!pages[name])name='home';for(var k in pages){pages[k].classList.toggle('active',k===name);}document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-nav')===name);});requestAnimationFrame(function(){pages[name].querySelectorAll('.reveal').forEach(function(el){revealObs.observe(el);});});window.scrollTo(0,0);if(push&&location.hash!=='#'+name){history.pushState(null,'','#'+name);}}
+document.addEventListener('click',function(e){var a=e.target.closest('a[data-link]');if(!a)return;e.preventDefault();showPage(a.getAttribute('href').replace('#','')||'home',true);if(navLinks)navLinks.classList.remove('open');});
+window.addEventListener('popstate',function(){showPage((location.hash||'#home').replace('#',''),false);});
+var menuBtn=document.querySelector('.menu-btn');if(menuBtn&&navLinks){menuBtn.addEventListener('click',function(){navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',navLinks.classList.contains('open'));});}
+var rotator=document.querySelector('[data-rotate]');if(rotator){var phrases=JSON.parse(rotator.dataset.rotate),i=0;if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&phrases.length>1){rotator.style.transition='opacity .35s ease';setInterval(function(){i=(i+1)%phrases.length;rotator.style.opacity=0;setTimeout(function(){rotator.textContent=phrases[i];rotator.style.opacity=1;},350);},4200);}}
+var countObs=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,t=parseInt(el.dataset.count,10),sf=el.dataset.suffix||'',st=performance.now();(function step(n){var p=Math.min((n-st)/1200,1);el.textContent=Math.round(t*p)+sf;if(p<1)requestAnimationFrame(step);})(st);countObs.unobserve(el);});},{threshold:0.4});
+document.querySelectorAll('[data-count]').forEach(function(el){countObs.observe(el);});
+var lt=document.querySelector('.lang-toggle');if(lt){var ev=document.querySelector('.events');lt.addEventListener('click',function(e){var b=e.target.closest('button[data-lang]');if(!b)return;lt.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');ev.classList.toggle('show-hi',b.dataset.lang==='hi');});}
+var form=document.getElementById('contact-form');if(form){form.addEventListener('submit',function(e){e.preventDefault();var n=document.getElementById('form-note');n.textContent='Thank you — your message has been recorded. Connect this form to your email or backend to receive submissions.';n.style.color='#3E7C59';form.reset();});}
+showPage((location.hash||'#home').replace('#',''),false);
+</script>
+</body></html>
