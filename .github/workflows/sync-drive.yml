@@ -1,0 +1,51 @@
+name: Sync content from Google Drive
+
+# Runs every day at 17:00 UTC = 22:30 IST.
+# GitHub's scheduler can lag by a few minutes under load, so treat 22:30 as
+# "around 22:30". You can also trigger it by hand from the Actions tab
+# (the "Run workflow" button) whenever your sister adds a new chapter and
+# you don't want to wait for the nightly run.
+on:
+  schedule:
+    - cron: "0 17 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write          # allow the job to commit the synced content back
+
+concurrency:
+  group: drive-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Sync chapters from Google Drive
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          DRIVE_FOLDER_ID: ${{ secrets.DRIVE_FOLDER_ID }}
+        run: python scripts/sync_drive.py
+
+      - name: Commit & push if content changed
+        run: |
+          git config user.name  "erf-content-bot"
+          git config user.email "actions@github.com"
+          git add data/chapters.json assets/chapters
+          if git diff --staged --quiet; then
+            echo "No content changes today."
+          else
+            git commit -m "Auto-sync website content from Google Drive"
+            git push
+          fi

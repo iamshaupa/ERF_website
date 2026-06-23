@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Diary | Earth Retreat Foundation</title>
+<meta name="description" content="Field diary of Earth Retreat Foundation — event reports, photo galleries, press coverage and videos, chapter by chapter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="contour-lines" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M-50 480 C 200 380, 380 560, 640 460 S 1100 520, 1260 420"/>
+        <path d="M-50 420 C 220 320, 400 500, 660 400 S 1080 460, 1260 360"/>
+        <path d="M-50 360 C 240 260, 420 440, 680 340 S 1060 400, 1260 300"/>
+        <path d="M-50 300 C 260 200, 440 380, 700 280 S 1040 340, 1260 240"/>
+        <path d="M-50 240 C 280 140, 460 320, 720 220 S 1020 280, 1260 180"/>
+        <path d="M-50 180 C 300 80, 480 260, 740 160 S 1000 220, 1260 120"/>
+      </g>
+    </symbol>
+    <symbol id="logo-mark" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="22" fill="none" stroke="#14352A" stroke-width="2.5"/>
+      <path d="M24 38 C 24 26, 16 22, 13 12 C 24 16, 28 22, 28 30 M24 38 C 24 30, 30 24, 36 20 C 33 28, 30 32, 24 38" fill="none" stroke="#3E7C59" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="24" cy="10" r="3" fill="#D89A2B"/>
+    </symbol>
+    <symbol id="person" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo.png" alt="Earth Retreat Foundation" width="54" height="54">
+      <div class="brand-name">Earth Retreat Foundation<span>CLIMATE &middot; BIODIVERSITY &middot; COMMUNITY</span></div>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">What We Do</a></li>
+        <li><a href="projects.html">Programs</a></li>
+        <li><a href="chapters.html" class="active">Chapters</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html" class="btn btn-solid nav-cta">Get Involved</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <svg class="contours" style="color:#fff"><use href="#contour-lines"/></svg>
+  <div class="wrap page-hero-inner">
+    <span class="eyebrow">Field diary</span>
+    <h1>Our work, chapter by chapter</h1>
+    <p>Every event we run is recorded here as a chapter &mdash; with the full write-up, a photo gallery, press coverage and videos. New chapters are added automatically as our team documents them in the field.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="reveal" style="max-width:720px">
+      <span class="eyebrow">Chapters</span>
+      <h2>Browse the field diary</h2>
+      <p class="lede" style="margin-top:.8rem" id="ch-intro">Loading chapters…</p>
+      <div id="ch-filter" class="ch-filter" role="group" aria-label="Filter by theme"></div>
+    </div>
+    <div id="ch-grid" class="ch-grid"></div>
+    <div id="ch-empty" class="ch-empty" style="display:none">
+      No chapters have been published yet. They will appear here automatically once the team adds them.
+    </div>
+  </div>
+</section>
+
+<!-- Detail modal -->
+<div class="ch-modal" id="ch-modal" aria-modal="true" role="dialog">
+  <button class="ch-close" id="ch-close" aria-label="Close">&times;</button>
+  <div class="ch-sheet">
+    <div class="hero-img" id="ch-hero"></div>
+    <div class="inner">
+      <div class="ch-meta" id="ch-detail-meta"></div>
+      <span class="ch-detail-tag" id="ch-detail-tag" style="display:none"></span>
+      <h2 id="ch-detail-title"></h2>
+      <div id="ch-detail-sections"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lb" id="lb"><button class="x" id="lb-x" aria-label="Close">&times;</button><img id="lb-img" alt=""></div>
+
+<script>
+(function(){
+  var grid=document.getElementById('ch-grid');
+  var intro=document.getElementById('ch-intro');
+  var empty=document.getElementById('ch-empty');
+  var modal=document.getElementById('ch-modal');
+  var lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img');
+
+  function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  var ALL=[], activeTag='all';
+  var filterBar=document.getElementById('ch-filter');
+
+  fetch('data/chapters.json?v='+Date.now()).then(function(r){return r.json();}).then(function(data){
+    ALL=(data&&data.chapters)||[];
+    if(!ALL.length){intro.style.display='none';empty.style.display='block';return;}
+    intro.textContent = ALL.length+' chapter'+(ALL.length>1?'s':'')+' published. Tap any chapter to read the full report, photos, press coverage and videos.';
+    buildFilter();
+    renderGrid();
+  }).catch(function(){intro.textContent='Could not load chapters right now.';});
+
+  function buildFilter(){
+    var counts={};
+    ALL.forEach(function(c){var t=(c.tag||'').trim();if(t)counts[t]=(counts[t]||0)+1;});
+    var tags=Object.keys(counts).sort();
+    if(!tags.length){filterBar.style.display='none';return;}
+    function chip(key,label,n){
+      var b=document.createElement('button');b.type='button';b.dataset.tag=key;
+      b.innerHTML=esc(label)+(n!=null?'<span class="count">'+n+'</span>':'');
+      if(key===activeTag)b.classList.add('on');
+      b.addEventListener('click',function(){
+        activeTag=key;
+        filterBar.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x.dataset.tag===key);});
+        renderGrid();
+      });
+      return b;
+    }
+    filterBar.innerHTML='';
+    filterBar.appendChild(chip('all','All themes',ALL.length));
+    tags.forEach(function(t){filterBar.appendChild(chip(t,t,counts[t]));});
+  }
+
+  function renderGrid(){
+    var list=activeTag==='all'?ALL:ALL.filter(function(c){return (c.tag||'')===activeTag;});
+    grid.innerHTML='';
+    list.forEach(function(c){
+      var cover=c.cover?('style="background-image:url(\''+c.cover+'\')"'):'';
+      var meta=[];if(c.date)meta.push(esc(c.date));if(c.location)meta.push(esc(c.location));
+      var badge=c.tag?('<span class="tag-badge">'+esc(c.tag)+'</span>'):'';
+      var card=document.createElement('article');
+      card.className='ch-card reveal in';
+      card.innerHTML='<div class="ch-cover" '+cover+'><span class="badge">CHAPTER '+esc(c.number)+'</span>'+badge+'</div>'+
+        '<div class="body"><div class="ch-meta">'+meta.map(function(m){return '<span>'+m+'</span>';}).join('')+'</div>'+
+        '<h3>'+esc(c.title)+'</h3><p class="sum">'+esc(c.summary)+'</p>'+
+        '<span class="more">READ CHAPTER &rarr;</span></div>';
+      card.addEventListener('click',function(){openChapter(c);});
+      grid.appendChild(card);
+    });
+  }
+
+  function thumbs(into,list){into.innerHTML='';list.forEach(function(src){
+    var im=document.createElement('img');im.src=src;im.alt='';im.loading='lazy';
+    im.addEventListener('click',function(){lbImg.src=src;lb.classList.add('open');});
+    into.appendChild(im);});}
+
+  function openChapter(c){
+    document.getElementById('ch-hero').style.backgroundImage=c.cover?('url(\''+c.cover+'\')'):'';
+    var meta=[];meta.push('<span class="num">CHAPTER '+esc(c.number)+'</span>');
+    if(c.date)meta.push('<span>'+esc(c.date)+'</span>');
+    if(c.location)meta.push('<span>'+esc(c.location)+'</span>');
+    document.getElementById('ch-detail-meta').innerHTML=meta.join('');
+    document.getElementById('ch-detail-title').textContent=c.title;
+    var tg=document.getElementById('ch-detail-tag');
+    if(c.tag){tg.textContent=c.tag;tg.style.display='inline-block';}else{tg.style.display='none';}
+    var wrap=document.getElementById('ch-detail-sections');
+    wrap.innerHTML='';
+    (c.sections||[]).forEach(function(sec){
+      var block=document.createElement('div');
+      var label=document.createElement('div');
+      label.className='ch-section-label';label.textContent=sec.name;
+      block.appendChild(label);
+      if(sec.type==='text'){
+        var tx=document.createElement('div');tx.className='ch-body';
+        tx.innerHTML=sec.body_html||'';block.appendChild(tx);
+        wrap.appendChild(block);return;
+      }
+      if(sec.images&&sec.images.length){
+        var g=document.createElement('div');g.className='thumbs';
+        sec.images.forEach(function(src){
+          var im=document.createElement('img');im.src=src;im.alt=sec.name;im.loading='lazy';
+          im.addEventListener('click',function(){lbImg.src=src;lb.classList.add('open');});
+          g.appendChild(im);});
+        block.appendChild(g);
+      }
+      if(sec.videos&&sec.videos.length){
+        var v=document.createElement('div');v.className='videos';
+        sec.videos.forEach(function(vid){
+          var d=document.createElement('div');d.className='vid';
+          d.innerHTML='<iframe src="'+esc(vid.embed)+'" allow="autoplay" allowfullscreen></iframe>';
+          v.appendChild(d);});
+        block.appendChild(v);
+      }
+      wrap.appendChild(block);
+    });
+    modal.classList.add('open');document.body.style.overflow='hidden';modal.scrollTop=0;
+  }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';
+    document.getElementById('ch-detail-sections').innerHTML='';}
+  document.getElementById('ch-close').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.getElementById('lb-x').addEventListener('click',function(){lb.classList.remove('open');lbImg.src='';});
+  lb.addEventListener('click',function(e){if(e.target===lb){lb.classList.remove('open');lbImg.src='';}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(lb.classList.contains('open')){lb.classList.remove('open');}else closeModal();}});
+})();
+</script>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/logo.png" alt="Earth Retreat Foundation" width="54" height="54">
+        <div class="brand-name">Earth Retreat Foundation</div>
+      </a>
+      <p>A grassroots environmental NGO working on climate action and biodiversity conservation across Chhattisgarh.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="services.html">What we do</a></li>
+        <li><a href="projects.html">Programs</a></li>
+        <li><a href="chapters.html" class="active">Chapters</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get involved</h4>
+      <ul>
+        <li><a href="contact.html">Partner with us</a></li>
+        <li><a href="contact.html">Volunteer</a></li>
+        <li><a href="contact.html">Workshops</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>hello@earthretreatfoundation.com</li>
+        <li>+91 XXXXX XXXXX</li>
+        <li>Chhattisgarh, India</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bar">
+    <span>&copy; 2026 EARTH RETREAT FOUNDATION</span>
+    <span>WWW.EARTHRETREATFOUNDATION.COM</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+{
+  "updated": "Sample data — will be replaced on the first Drive sync",
+  "chapters": [
+    {
+      "number": "14",
+      "title": "BMC Training & Awareness — sample chapter",
+      "date": "11 May 2026",
+      "location": "Piperchhedi",
+      "summary": "A sample chapter so the page has something to show. It is replaced automatically the first time the Drive sync runs.",
+      "cover": "assets/chapters/01/images/01_sample.jpg",
+      "sections": [
+        {
+          "type": "text",
+          "name": "Info",
+          "body_html": "<p>This text comes from the Word document inside the chapter folder. Its <strong>heading is the file's name</strong> — name the file <strong>Info</strong> and this section is called &ldquo;Info&rdquo;; name it <strong>Description</strong> and it becomes &ldquo;Description&rdquo;.</p><p>Because the file was named <strong>1 Info.docx</strong>, it appears first, before the folders numbered 2, 3, 4, 5 below. The location &ldquo;Piperchhedi&rdquo; was read from the chapter folder name &ldquo;Chapter 14 : Piperchhedi&rdquo;.</p>"
+        },
+        {
+          "type": "media",
+          "name": "Gallery",
+          "images": [
+            "assets/chapters/01/images/01_sample.jpg",
+            "assets/chapters/01/images/02_sample.jpg",
+            "assets/chapters/01/images/03_sample.jpg"
+          ],
+          "videos": []
+        },
+        {
+          "type": "media",
+          "name": "Newspaper",
+          "images": [
+            "assets/chapters/01/newspapers/01_clip.jpg",
+            "assets/chapters/01/newspapers/02_clip.jpg"
+          ],
+          "videos": []
+        },
+        {
+          "type": "media",
+          "name": "Testimonials",
+          "images": [
+            "assets/chapters/01/testimonials/01_villager.jpg",
+            "assets/chapters/01/testimonials/02_villager.jpg"
+          ],
+          "videos": []
+        }
+      ],
+      "tag": "Biodiversity"
+    },
+    {
+      "number": "13",
+      "title": "Plastic-Free Drive — sample",
+      "date": "18 May 2026",
+      "location": "Badbhoom",
+      "tag": "Plastic Reduction",
+      "summary": "Sample chapter tagged Plastic Reduction to demonstrate filtering by theme.",
+      "cover": "assets/chapters/01/images/03_sample.jpg",
+      "sections": [
+        {
+          "type": "text",
+          "name": "Info",
+          "body_html": "<p>This chapter is tagged <strong>Plastic Reduction</strong> via the folder name <strong>Chapter 13 : Badbhoom : Plastic Reduction</strong>.</p>"
+        },
+        {
+          "type": "media",
+          "name": "Gallery",
+          "images": [
+            "assets/chapters/01/images/03_sample.jpg",
+            "assets/chapters/01/images/02_sample.jpg"
+          ],
+          "videos": []
+        }
+      ]
+    },
+    {
+      "number": "12",
+      "title": "Climate Conclave — sample",
+      "date": "17 Mar 2026",
+      "location": "Durg",
+      "tag": "Climate Change",
+      "summary": "Sample chapter tagged Climate Change to demonstrate filtering by theme.",
+      "cover": "assets/chapters/01/images/02_sample.jpg",
+      "sections": [
+        {
+          "type": "text",
+          "name": "Info",
+          "body_html": "<p>This chapter is tagged <strong>Climate Change</strong> via the folder name <strong>Chapter 12 : Durg : Climate Change</strong>.</p>"
+        },
+        {
+          "type": "media",
+          "name": "Gallery",
+          "images": [
+            "assets/chapters/01/images/02_sample.jpg",
+            "assets/chapters/01/images/01_sample.jpg"
+          ],
+          "videos": []
+        }
+      ]
+    }
+  ]
+}
