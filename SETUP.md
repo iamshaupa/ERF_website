@@ -86,7 +86,7 @@ In the repo: **Settings → Secrets and variables → Actions → New repository
 ## Step 4 — GitHub Pages + Actions permissions
 
 1. **Settings → Pages →** set the source to your branch (e.g. `main`) / root,
-   and attach your custom domain `earthretreatfoundation.com`.
+   and attach your custom domain `earthretreat.org`.
 2. **Settings → Actions → General → Workflow permissions →** select
    **Read and write permissions** (so the job can push the synced content).
 
@@ -96,7 +96,7 @@ In the repo: **Settings → Secrets and variables → Actions → New repository
   **Run workflow** (manual trigger). Watch it run.
 - If green, it will have replaced the sample chapter with whatever real
   `Chapter NN` folders exist in Drive, committed them, and Pages will redeploy.
-- Open `https://earthretreatfoundation.com/chapters.html` to see the result.
+- Open `https://earthretreat.org/chapters.html` to see the result.
 
 From now on it runs automatically every night at 22:30 IST. You can always hit
 **Run workflow** to publish immediately instead of waiting.

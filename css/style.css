@@ -327,7 +327,7 @@ footer{background:var(--canopy-deep);color:rgba(255,255,255,.78)}
 @keyframes sway{0%{transform:rotate(-2.2deg)}100%{transform:rotate(2.2deg)}}
 @keyframes shimmer{0%,100%{opacity:.55}50%{opacity:1}}
 @keyframes drop{0%{transform:translateY(-6px);opacity:0}15%{opacity:1}100%{transform:translateY(46px);opacity:0}}
-@keyframes flyAcross{0%{transform:translate(-50px,8px)}100%{transform:translate(440px,-12px)}}
+@keyframes flyAcross{0%{transform:translate(-50px,40px)}100%{transform:translate(440px,24px)}}
 @keyframes flap{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.35)}}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @keyframes wing{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.5)}}
