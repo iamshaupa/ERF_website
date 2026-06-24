@@ -18,13 +18,18 @@ const rotator = document.querySelector('[data-rotate]');
 if (rotator) {
   const phrases = JSON.parse(rotator.dataset.rotate);
   let i = 0;
+  const renderPhrase = () => {
+    rotator.textContent = window.ERFI18n ? window.ERFI18n.translate(phrases[i]) : phrases[i];
+  };
+  document.addEventListener('erf:languagechange', renderPhrase);
+  renderPhrase();
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduced && phrases.length > 1) {
     setInterval(() => {
       i = (i + 1) % phrases.length;
       rotator.style.opacity = 0;
       setTimeout(() => {
-        rotator.textContent = phrases[i];
+        renderPhrase();
         rotator.style.opacity = 1;
       }, 350);
     }, 4200);

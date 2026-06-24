@@ -78,6 +78,23 @@ header{
 .nav-links a{font-size:.95rem;color:var(--ink);padding:.3rem 0;border-bottom:2px solid transparent;transition:border-color .2s}
 .nav-links a:hover,.nav-links a.active{border-color:var(--marigold);color:var(--canopy)}
 .nav-cta{margin-left:.5rem;padding:.65rem 1.5rem !important;line-height:1.1 !important;display:inline-flex !important;align-items:center;height:auto !important;white-space:nowrap}
+.site-language{
+  display:flex;align-items:center;gap:.2rem;margin-left:1rem;padding:.2rem;
+  border:1px solid rgba(20,53,42,.18);border-radius:999px;background:var(--white);
+}
+.site-language button{
+  min-width:36px;height:30px;padding:0 .55rem;border:0;border-radius:999px;
+  background:transparent;color:var(--canopy);font:600 .72rem 'IBM Plex Mono',monospace;
+  cursor:pointer;transition:background .2s ease,color .2s ease;
+}
+.site-language button.active{background:var(--canopy);color:var(--white)}
+.lang-hi{font-family:'Noto Sans Devanagari','Karla',system-ui,sans-serif}
+.lang-hi h1,.lang-hi h2,.lang-hi h3,.lang-hi .display,.lang-hi .brand-name{
+  font-family:'Noto Sans Devanagari','Marcellus',serif;
+}
+.lang-hi .eyebrow,.lang-hi .btn,.lang-hi .field label{
+  font-family:'Noto Sans Devanagari','IBM Plex Mono',sans-serif;letter-spacing:.04em;
+}
 .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
 .menu-btn svg{width:26px;height:26px;stroke:var(--canopy)}
 
@@ -231,6 +248,8 @@ footer{background:var(--canopy-deep);color:rgba(255,255,255,.78)}
   .two-col,.contact-grid{grid-template-columns:1fr}
   .grid-3,.team-grid{grid-template-columns:repeat(2,1fr)}
   .foot{grid-template-columns:1fr 1fr}
+  .nav-links{gap:1rem}
+  .site-language{margin-left:auto;margin-right:.65rem}
 }
 @media (max-width:640px){
   .grid-3,.grid-2,.team-grid{grid-template-columns:1fr}

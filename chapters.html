@@ -6,7 +6,7 @@
 <title>Field Diary | Earth Retreat Foundation</title>
 <meta name="description" content="Field diary of Earth Retreat Foundation — event reports, photo galleries, press coverage and videos, chapter by chapter.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="stylesheet" href="css/style.css">
 
@@ -109,6 +109,10 @@
   var lb=document.getElementById('lb'), lbImg=document.getElementById('lb-img');
 
   function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function localized(obj,key){
+    var lang=window.ERFI18n&&window.ERFI18n.getLanguage?window.ERFI18n.getLanguage():'en';
+    return lang==='hi'&&obj&&obj[key+'_hi']?obj[key+'_hi']:(obj&&obj[key])||'';
+  }
 
   var ALL=[], activeTag='all';
   var filterBar=document.getElementById('ch-filter');
@@ -139,7 +143,10 @@
     }
     filterBar.innerHTML='';
     filterBar.appendChild(chip('all','All themes',ALL.length));
-    tags.forEach(function(t){filterBar.appendChild(chip(t,t,counts[t]));});
+    tags.forEach(function(t){
+      var item=ALL.find(function(c){return (c.tag||'')===t;})||{};
+      filterBar.appendChild(chip(t,localized(item,'tag')||t,counts[t]));
+    });
   }
 
   function renderGrid(){
@@ -147,13 +154,13 @@
     grid.innerHTML='';
     list.forEach(function(c){
       var cover=c.cover?('style="background-image:url(\''+c.cover+'\')"'):'';
-      var meta=[];if(c.date)meta.push(esc(c.date));if(c.location)meta.push(esc(c.location));
-      var badge=c.tag?('<span class="tag-badge">'+esc(c.tag)+'</span>'):'';
+      var meta=[];if(c.date)meta.push(esc(localized(c,'date')));if(c.location)meta.push(esc(localized(c,'location')));
+      var badge=c.tag?('<span class="tag-badge">'+esc(localized(c,'tag'))+'</span>'):'';
       var card=document.createElement('article');
       card.className='ch-card reveal in';
       card.innerHTML='<div class="ch-cover" '+cover+'><span class="badge">CHAPTER '+esc(c.number)+'</span>'+badge+'</div>'+
         '<div class="body"><div class="ch-meta">'+meta.map(function(m){return '<span>'+m+'</span>';}).join('')+'</div>'+
-        '<h3>'+esc(c.title)+'</h3><p class="sum">'+esc(c.summary)+'</p>'+
+        '<h3>'+esc(localized(c,'title'))+'</h3><p class="sum">'+esc(localized(c,'summary'))+'</p>'+
         '<span class="more">READ CHAPTER &rarr;</span></div>';
       card.addEventListener('click',function(){openChapter(c);});
       grid.appendChild(card);
@@ -168,28 +175,28 @@
   function openChapter(c){
     document.getElementById('ch-hero').style.backgroundImage=c.cover?('url(\''+c.cover+'\')'):'';
     var meta=[];meta.push('<span class="num">CHAPTER '+esc(c.number)+'</span>');
-    if(c.date)meta.push('<span>'+esc(c.date)+'</span>');
-    if(c.location)meta.push('<span>'+esc(c.location)+'</span>');
+    if(c.date)meta.push('<span>'+esc(localized(c,'date'))+'</span>');
+    if(c.location)meta.push('<span>'+esc(localized(c,'location'))+'</span>');
     document.getElementById('ch-detail-meta').innerHTML=meta.join('');
-    document.getElementById('ch-detail-title').textContent=c.title;
+    document.getElementById('ch-detail-title').textContent=localized(c,'title');
     var tg=document.getElementById('ch-detail-tag');
-    if(c.tag){tg.textContent=c.tag;tg.style.display='inline-block';}else{tg.style.display='none';}
+    if(c.tag){tg.textContent=localized(c,'tag');tg.style.display='inline-block';}else{tg.style.display='none';}
     var wrap=document.getElementById('ch-detail-sections');
     wrap.innerHTML='';
     (c.sections||[]).forEach(function(sec){
       var block=document.createElement('div');
       var label=document.createElement('div');
-      label.className='ch-section-label';label.textContent=sec.name;
+      label.className='ch-section-label';label.textContent=localized(sec,'name');
       block.appendChild(label);
       if(sec.type==='text'){
         var tx=document.createElement('div');tx.className='ch-body';
-        tx.innerHTML=sec.body_html||'';block.appendChild(tx);
+        tx.innerHTML=localized(sec,'body_html');block.appendChild(tx);
         wrap.appendChild(block);return;
       }
       if(sec.images&&sec.images.length){
         var g=document.createElement('div');g.className='thumbs';
         sec.images.forEach(function(src){
-          var im=document.createElement('img');im.src=src;im.alt=sec.name;im.loading='lazy';
+          var im=document.createElement('img');im.src=src;im.alt=localized(sec,'name');im.loading='lazy';
           im.addEventListener('click',function(){lbImg.src=src;lb.classList.add('open');});
           g.appendChild(im);});
         block.appendChild(g);
@@ -213,6 +220,7 @@
   document.getElementById('lb-x').addEventListener('click',function(){lb.classList.remove('open');lbImg.src='';});
   lb.addEventListener('click',function(e){if(e.target===lb){lb.classList.remove('open');lbImg.src='';}});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(lb.classList.contains('open')){lb.classList.remove('open');}else closeModal();}});
+  document.addEventListener('erf:languagechange',function(){if(ALL.length){buildFilter();renderGrid();}});
 })();
 </script>
 
@@ -247,7 +255,7 @@
       <h4>Contact</h4>
       <ul>
         <li>info@earthretreat.org</li>
-        <li>+91 XXXXX XXXXX</li>
+        <li>+91 94790 39038</li>
         <li>Chhattisgarh, India</li>
       </ul>
     </div>
@@ -258,6 +266,7 @@
   </div>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
