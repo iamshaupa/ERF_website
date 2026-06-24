@@ -74,7 +74,7 @@ header{
 .nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center}
 .nav-links a{font-size:.95rem;color:var(--ink);padding:.3rem 0;border-bottom:2px solid transparent;transition:border-color .2s}
 .nav-links a:hover,.nav-links a.active{border-color:var(--marigold);color:var(--canopy)}
-.nav-cta{margin-left:.5rem;padding:.7rem 1.8rem;font-size:.82rem;line-height:1;display:inline-flex;align-items:center}
+.nav-cta{margin-left:.5rem;padding:.65rem 1.5rem !important;line-height:1.1 !important;display:inline-flex !important;align-items:center;height:auto !important;white-space:nowrap}
 .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
 .menu-btn svg{width:26px;height:26px;stroke:var(--canopy)}
 
